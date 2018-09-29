@@ -45,7 +45,7 @@
 			<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
 				<h3>This is the web app for Casey Pye's CS 313 projects.</h3>
 				<p>As the fall semester of 2018 continues, expect to find more projects posted here.</p>
-				<span id="span1">Your IP address is: <?php echo $_POST[$_SERVER['REMOTE_ADDR']]</span>
+				<span id="span1">Your IP address is: <?php echo $_POST[$_SERVER['REMOTE_ADDR']]?></span>
 			</div>
 			<div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
