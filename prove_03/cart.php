@@ -14,6 +14,8 @@ session_start();
     <title>Shopping Cart</title>
 	<script>
 		$(document).ready(function(){
+			updateCartSummary();
+			
 			$("#bearBtn").click(function(){
 				$("#bearRow").remove();
 			});
@@ -28,31 +30,30 @@ session_start();
 			});
 			// calculate price
 			$("input").change(function(){
-				//alert("The text has been changed.");
+				updateCartSummary();
+				
+			});
+			function updateCartSummary() {
+				// Calculate initial quantity
 				var quantity = 0;
-				//alert($("#bear_quantity").val()); //works
 				var bear = $("#bear_quantity").val();
 				if (typeof bear === "undefined") {bear = 0;}
 				var bear_price = bear * 15.0;
 				var beaver = $("#beaver_quantity").val();
 				if (typeof beaver === "undefined") {beaver = 0;}
+				var beaver_price = beaver * 10.0;
 				var fire = $("#fire_quantity").val();
 				if (typeof fire === "undefined") {fire = 0;}
+				var fire_price = fire * 15.0;
 				var river = $("#river_quantity").val();
 				if (typeof river === "undefined") {river = 0;}
-				//alert(river);
+				var river_price = river * 5.0;
 				var total = parseInt(bear) + parseInt(beaver) + parseInt(fire) + parseInt(river);
-				alert(total);
-				// assign quantity
+				var totalPrice = bear_price + beaver_price + fire_price + river_price;
 				$("#totalQuantity").text(total);
-				// total price
-				$("#totalPrice").text(bear_price);
-				//var bear = $(#bear_quantity).val();
-				//alert($(#bear_quantity).val());
-				//calculate items number
-				//var quantity = $(#bear_quantity) + $(#beaver_quantity) + $(#fire_quantity) + $(#river_quantity);
-				//alert(quantity);
-			});
+				$("#totalPrice").text(totalPrice);
+				//$("#totalPrice").text(bear_price);
+			}
 		});
 	</script>
   </head>
@@ -167,8 +168,8 @@ session_start();
 						<span id="totalQuantity" name="totalQuantity"><span>
 					</p>
 					<p>
-						<span class="font-weight-bold">Total: </span>
-						<span id="totalPrice" name="totalPrice">$100<span>
+						<span class="font-weight-bold">Total: $</span>
+						<span id="totalPrice" name="totalPrice"><span>
 					</p>
 					
 					<button id="submitBtn" type="submit" class="btn btn-primary col-lg-12 " >
