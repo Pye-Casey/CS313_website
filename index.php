@@ -20,7 +20,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="index.php">Home
+					<a class="nav-link" href="#">Home
 					<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
@@ -47,7 +47,6 @@
 			<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
 				<h3>This is the web app for Casey Pye's CS 313 projects.</h3>
 				<p>As the fall semester of 2018 continues, expect to find more projects posted here.</p>
-				
 			</div>
 			<div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
