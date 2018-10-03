@@ -24,7 +24,7 @@
 					<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Cart</a>
+					<a class="nav-link enabled" href="prove_03/index.php">Cart</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link disabled" href="#">DB</a>
