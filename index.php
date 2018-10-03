@@ -20,11 +20,11 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Home
+					<a class="nav-link" href="index.php">Home
 					<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Cart</a>
+					<a class="nav-link enabled" href="prove_03/index.php">Cart</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link disabled" href="#">DB</a>
@@ -38,14 +38,16 @@
 	<div class="container">
 	<div class="jumbotron">
 		<div class="page-header">
-			<h1>Casey Pye, M.S.</h1>
+			<h1>
+				<?php echo "Casey Pye, M.S." ?>
+			</h1>
 		</div>
 		
 		<div class="row">
 			<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
 				<h3>This is the web app for Casey Pye's CS 313 projects.</h3>
 				<p>As the fall semester of 2018 continues, expect to find more projects posted here.</p>
-				<span id="span1">Your IP address is: <?php echo $_POST[$_SERVER['REMOTE_ADDR']]</span>
+				
 			</div>
 			<div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
