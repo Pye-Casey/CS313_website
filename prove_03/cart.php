@@ -1,8 +1,7 @@
 <?php
 session_start();
+echo $_SESSION["bear"];
 ?>
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,16 +16,24 @@ session_start();
 			updateCartSummary();
 			
 			$("#bearBtn").click(function(){
+				$("#bear_quantity").val(0);
 				$("#bearRow").remove();
+				updateCartSummary();
 			});
 			$("#beaverBtn").click(function(){
+				$("#beaver_quantity").val(0);
 				$("#beaverRow").remove();
+				updateCartSummary();
 			});
 			$("#fireBtn").click(function(){
+				$("#fire_quantity").val(0);
 				$("#fireRow").remove();
+				updateCartSummary();
 			});
 			$("#riverBtn").click(function(){
+				$("#river_quantity").val(0);
 				$("#riverRow").remove();
+				updateCartSummary();
 			});
 			// calculate price
 			$("input").change(function(){
@@ -52,10 +59,41 @@ session_start();
 				var totalPrice = bear_price + beaver_price + fire_price + river_price;
 				$("#totalQuantity").text(total);
 				$("#totalPrice").text(totalPrice);
-				//$("#totalPrice").text(bear_price);
+				$("#cost").text(totalPrice);
 			}
 		});
 	</script>
+	<?php
+		$bear = $beaver = $fire = $river = 0;
+		if (isset($_POST["bear_bath"])== false) {
+			if ($_SESSION["bear"] < 1) {
+				$_POST["bear_bath"] = 0;
+			}else {
+				$_POST["bear_bath"] = $_SESSION["bear"];
+			}
+		}
+		if (isset($_POST["beaver_bath"])== false) {
+			if ($_SESSION["beaver"] < 1) {
+				$_POST["beaver_bath"] = 0;
+			}else {
+				$_POST["beaver_bath"] = $_SESSION["beaver"];
+			}
+		}
+		if (isset($_POST["fire_bath"])== false) {
+			if ($_SESSION["fire"] < 1) {
+				$_POST["fire_bath"] = 0;
+			}else {
+				$_POST["fire_bath"] = $_SESSION["fire"];
+			}
+		}
+		if (isset($_POST["river_bath"])== false) {
+			if ($_SESSION["river"] < 1) {
+				$_POST["river_bath"] = 0;
+			}else {
+				$_POST["river_bath"] = $_SESSION["river"];
+			}
+		}
+	?>
   </head>
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
@@ -159,7 +197,6 @@ session_start();
 			
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-			<h4>This is the cart summary</h4>
 			<div class="panel panel-primary">
 				<div class="panel-heading">Cart Summary</div>
 				<div class="panel-body">
@@ -169,7 +206,7 @@ session_start();
 					</p>
 					<p>
 						<span class="font-weight-bold">Total: $</span>
-						<span id="totalPrice" name="totalPrice"><span>
+						<span id="totalPrice" name="cost"><span><br>
 					</p>
 					
 					<button id="submitBtn" type="submit" class="btn btn-primary col-lg-12 " >
@@ -180,13 +217,7 @@ session_start();
 		</div>
 	</div>
 	
-	<?php
-		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			if (isset($_POST['bearBtn'])) {
-				echo "Bear button pressed";
-			}
-		}
-	?>
+	
 	
 	</div>
 		
