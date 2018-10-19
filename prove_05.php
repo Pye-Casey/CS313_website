@@ -41,7 +41,7 @@
 				foreach ($db->query('SELECT id, first_name, last_name FROM note_user') as $row)
 				{
 				  echo 'Student ID: ' . $row['id'];
-				  echo ' Name: ' . $row['first_name' . ' ' . $row['last_name'];
+				  
 				  echo '<br/>';
 				}
 			?>
