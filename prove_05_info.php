@@ -33,8 +33,8 @@
   ?>
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
-	<h1>Prove 5: PHP Data Access</h1>
-	<form  action="prove_05_info.php" method="post">
+	<h1>Student Info Page</h1>
+	<form action="prove_05.php" method="post">
 		<div class="container">
 			<h3>Students in database: </h3><br>
 			<p>
