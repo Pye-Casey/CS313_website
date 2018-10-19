@@ -37,18 +37,20 @@
 	<form  method="post">
 		<div class="container">
 			<h3>Students in database: </h3><br>
+			<p>
 			<?php
 				foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 				{
 				  echo 'Student ID: ' . $row['id']; 
 				  echo '    ' . $row['first_name'] . ' ' . $row['last_name'] ;
-				  //echo '    <button input="submit" name="studentID" value="' . $row['id'] . '">Info</button>' ; 
+				  echo '    <button input="submit" name="studentID" value="' . $row['id'] . '">Info</button>' ; 
 				  echo '<br/>';
 				  // add session
 				  $_SESSION["id"] = $row['id'];
 				}
 	
 			?>
+			</p>
 			
 		</div>
 	</form>
