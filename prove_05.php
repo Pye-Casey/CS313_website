@@ -38,7 +38,12 @@
 		<div class="container">
 			<h3>Students in database: </h3><br>
 			<?php
-				echo $db->query("SELECT * FROM Students");
+				foreach ($db->query('SELECT id, first_name, last_name FROM note_user') as $row)
+				{
+				  echo 'Student ID: ' . $row['id'];
+				  echo ' Name: ' . $row['first_name' . ' ' . $row['last_name'];
+				  echo '<br/>';
+				}
 			?>
 			
 		</div>
