@@ -39,7 +39,7 @@
 			<h3>Students in database: </h3><br>
 			<?php
 				echo 'In the right place';
-				foreach ($db->query('SELECT id, first_name, last_name FROM note_user') as $row)
+				foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 				{
 				  echo 'Student ID: ' . $row['id'];
 				  
