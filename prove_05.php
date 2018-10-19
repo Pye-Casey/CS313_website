@@ -34,7 +34,7 @@
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
 	<h1>Prove 5: PHP Data Access
-	<form action="cart.php" method="post">
+	<form  method="post">
 		<div class="container">
 			<h3>Students in database: </h3><br>
 			<?php
