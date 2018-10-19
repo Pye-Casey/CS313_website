@@ -42,7 +42,10 @@
 				{
 				  echo 'Student ID: ' . $row['id']; 
 				  echo '    ' . $row['first_name'] . ' ' . $row['last_name'] ;
+				  echo '    <button input="submit" name="studentID" value="' . $row['id'] . '">Info</button>' ; 
 				  echo '<br/>';
+				  // add session
+				  $_SESSION["$row['id']"];
 				}
 	
 			?>
