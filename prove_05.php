@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     
-	<?php include '../bootstrapScripts.php'; ?>
+	<?php include 'bootstrapScripts.php'; ?>
 	<link rel="stylesheet" type="text/css" href="css/prove3.css">
     <title>Prove 3</title>
   </head>
