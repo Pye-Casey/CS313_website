@@ -41,7 +41,7 @@
 				echo 'In the right place';
 				foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 				{
-				  echo 'Student ID: ' . $row['id'];
+				  echo 'Student ID: ' . $row['id']; 
 				  
 				  echo '<br/>';
 				}
