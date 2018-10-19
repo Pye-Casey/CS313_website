@@ -45,7 +45,7 @@
 				  //echo '    <button input="submit" name="studentID" value="' . $row['id'] . '">Info</button>' ; 
 				  echo '<br/>';
 				  // add session
-				  $_SESSION["$row['id']"];
+				  $_SESSION["id"] = $row['id'];
 				}
 	
 			?>
