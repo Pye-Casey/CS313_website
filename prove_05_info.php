@@ -47,12 +47,7 @@
 				}
 				
 			}
-		//$results = $statement->fetchAll(PDO::FETCH_ASSOC);
-		//echo $_POST['id'];
-		//echo $results;
-		//echo $statement['first_name'];
-		//echo $statement['last_name'];
-		//echo $statement['grade_level'];
+		
 	?>
 	<h1>Student Info Page</h1><br>
 	<h2>Student Info</h2>
@@ -65,7 +60,7 @@
 	<strong>Last Name: </strong> <?php echo $lName; ?>
 	</div>
 	<div class="row">
-	<strong>Student ID Number: </strong> <?php echo $_POST['id']?>
+	<strong>Student ID: </strong> <?php echo $_POST['id']?>
 	</div>
 	<div class="row">
 	<strong>Grade: </strong> <?php echo $grade; ?>
@@ -81,6 +76,13 @@
 					<th>Email</th>
 				</thead>
 				<tbody>
+				<?php 
+				$query = "SELECT pr.parent_id, pr.student_id FROM parent_relationship AS pr WHERE pr.student_id = '1'";
+				foreach ($db->query($query) as $row)
+				{
+					echo $row['pr.parent_id'] . '<br>';
+				}
+				?>
 					<tr>
 						<td>1</td>
 						<td>Bob Ross</td>
