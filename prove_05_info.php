@@ -81,10 +81,10 @@
 				foreach ($db->query($myQuery) as $row2)
 				{
 					$parentID = $row2['parent_id'];
-					$parentQuery = "SELECT id, first_name, last_name, email, phone_number FROM parent WHERE id='" . $parentID . "'";
+					$parentQuery = "SELECT id, first_name, last_name, email, phone_number FROM parent WHERE id='2'";
 					foreach ($db->query($parentQuery) as $pRow)
 					{
-						
+						echo $pRow['first_name'];
 					}
 				?>
 					<tr>
