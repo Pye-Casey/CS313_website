@@ -77,10 +77,10 @@
 				</thead>
 				<tbody>
 				<?php 
-				$query = "SELECT pr.parent_id, pr.student_id FROM parent_relationship AS pr WHERE pr.student_id = '1'";
-				foreach ($db->query($query) as $row)
+				$myQuery = "SELECT pr.parent_id, pr.student_id FROM parent_relationship AS pr WHERE pr.student_id = '1'";
+				foreach ($db->query($myQuery) as $row2)
 				{
-					echo $row['pr.parent_id'] . '<br>';
+					echo $row2['parent_id'];
 				}
 				?>
 					<tr>
