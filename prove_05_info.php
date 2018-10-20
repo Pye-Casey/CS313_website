@@ -34,16 +34,18 @@
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
 	<?php
-		echo $_POST['id'];
 		$statement = $db->query('SELECT id, first_name, last_name, grade_level FROM student WHERE id='. $_POST['id'] .'');
-	
+		echo $_POST['id'];
+		echo $statement['first_name'];
+		echo $statement['last_name'];
+		echo $statement['grade_level'];
 	?>
 	<h1>Student Info Page</h1><br>
 	<h2>Student Info</h2>
 	<div class="container">
 	
 	<div class="row">
-		<strong>First Name:</strong>  <?php echo $statement['first_name']; ?>
+		<strong>First Name:</strong>  <?php  ?>
 	</div>
 	<div class="row">
 	<strong>Last Name: </strong> 
