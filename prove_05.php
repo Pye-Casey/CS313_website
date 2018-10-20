@@ -47,6 +47,7 @@
 					<?php
 						foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 						{
+						  echo '<td>' . $row['id'] .'</td>';
 						  //echo '<td>' . $row['id'] .'</td>
 						//<td>'. $row['first_name'] . ' ' . $row['last_name']'</td>
 						//<td><button input="submit" name="studentID" value="' . $row['id'] . '">Info</button></td>';
