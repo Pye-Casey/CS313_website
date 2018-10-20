@@ -34,7 +34,7 @@
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
 	<?php
-		echo $_POST['id']
+		echo $_POST['id'];
 		$statement = $db->query('SELECT id, first_name, last_name, grade_level FROM student WHERE id='. $_POST['id'] .'');
 	
 	?>
