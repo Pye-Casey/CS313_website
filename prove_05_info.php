@@ -77,7 +77,8 @@
 				</thead>
 				<tbody>
 				<?php 
-				$myQuery = "SELECT pr.parent_id, pr.student_id FROM parent_relationship AS pr WHERE pr.student_id = '1'";
+				$myQuery = "SELECT pr.parent_id, pr.student_id FROM parent_relationship AS pr WHERE pr.student_id = '". $_POST['id'] ."'";
+				echo $myQuery;
 				foreach ($db->query($myQuery) as $row2)
 				{
 					$parentID = $row2['parent_id'];
