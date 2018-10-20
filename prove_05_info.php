@@ -82,10 +82,10 @@
 				{
 					$parentID = $row2['parent_id'];
 					$parentQuery = "SELECT id, first_name, last_name, email, phone_number FROM parent WHERE id='2'";
-					foreach ($db->query($parentQuery) as $pRow)
-					{
-						echo $pRow['first_name'];
-					}
+					//foreach ($db->query($parentQuery) as $pRow)
+					//{
+					//	echo $pRow['first_name'];
+					//}
 				?>
 					<tr>
 						<td>1</td>
