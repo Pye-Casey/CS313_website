@@ -79,10 +79,10 @@
 				<?php 
 				$myQuery = "SELECT pr.parent_id, pr.student_id FROM parent_relationship AS pr WHERE pr.student_id = '". $_POST['id'] ."'";
 				echo $myQuery;
-				foreach ($db->query($myQuery) as $row2)
+				foreach ($db->query($myQuery) as $parentRow)
 				{
-					$parentID = $row2['parent_id'];
-					$parentQuery = "SELECT id, first_name, last_name, email, phone_number FROM parent WHERE id='2'";
+					$parentID = $parentRow['parent_id'];
+					$parentQuery = "SELECT id, first_name, last_name, email, phone_number FROM parent WHERE id='". $parentID ."'";
 					foreach ($db->query($parentQuery) as $pRow)
 					{
 						echo $pRow['first_name'];
