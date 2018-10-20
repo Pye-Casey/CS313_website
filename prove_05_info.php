@@ -35,8 +35,9 @@
 	<?php include 'menu.php'; ?> <!	Add menu !>
 	<?php
 		//$sql = 'SELECT first_name, last_name, grade_level FROM student WHERE id="'. $_POST['id'] .'"';
-		$sql = 'SELECT first_name, last_name, grade_level FROM student WHERE id=2';
+		$sql = "SELECT first_name, last_name, grade_level FROM student WHERE id = '2'";
 		$statement = $db->query($sql);
+		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		echo $_POST['id'];
 		echo $statement['first_name'];
 		//echo $statement['last_name'];
