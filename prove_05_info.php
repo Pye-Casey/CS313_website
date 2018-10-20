@@ -84,28 +84,15 @@
 					$parentQuery = "SELECT id, first_name, last_name, email, phone_number FROM parent WHERE id='". $parentID ."'";
 					foreach ($db->query($parentQuery) as $parentRow)
 					{
-						//echo $pRow['first_name'];
 						echo '<tr>';
 						echo '<td>'. $parentRow['id'] . '</td>';
 						echo '<td>'. $parentRow['first_name'] . ' ' . $parentRow['last_name'] . '</td>';
 						echo '<td>'. $parentRow['phone_number'] . '</td>';
 						echo '<td>'. $parentRow['email'] . '</td>';
-						
 					}
 				}
 				?>
-					<tr>
-						<td>1</td>
-						<td>Bob Ross</td>
-						<td>55555555</td>
-						<td>email@mail.com<td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Turd Furgeson</td>
-						<td>5555555</td>
-						<td>email@mail.com<td>
-					</tr>
+	
 				</tbody>
 			</table>
 	</div>

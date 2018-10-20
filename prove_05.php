@@ -56,24 +56,11 @@
 						  // add session
 						  $_SESSION["id"] = $row['id'];
 						}
-						
-			
 					?>
 					
 				</tbody>
 			</table>
 			</div>
-			<form action="prove_05_query.php" method="post" class="form-group">
-				<div class="container">
-				<h3>Student Query</h3>
-				Last Name: <input type="text" class="form-control" name="lName"> <br>
-				<button type="submit" >Search</button>
-				</div>
-			</form>
-
-			
-			
-			
 		
 	</form>
   </body>
