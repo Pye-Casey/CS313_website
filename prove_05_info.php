@@ -44,7 +44,7 @@
 	<strong>Last Name: </strong> 
 	</div>
 	<div class="row">
-	<strong>Student ID Number: </strong> 
+	<strong>Student ID Number: </strong> <?php echo $_POST['id']?>
 	</div>
 	<div class="row">
 	<strong>Grade: </strong> 
