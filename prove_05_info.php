@@ -36,7 +36,7 @@
 	<?php
 		$sql = 'SELECT first_name, last_name, grade_level FROM student WHERE id="'. $_POST['id'] .'"';
 		
-		foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
+		foreach ($db->query('SELECT id, first_name, last_name, grade_level FROM student') as $row)
 			{
 				if ($row['id'] == $_POST['id']) {
 					$id = $row['id'];
