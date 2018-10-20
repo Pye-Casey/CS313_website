@@ -39,6 +39,7 @@
 		$statement = $db->query($sql);
 		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		echo $_POST['id'];
+		echo $results;
 		echo $statement['first_name'];
 		//echo $statement['last_name'];
 		//echo $statement['grade_level'];
