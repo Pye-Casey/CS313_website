@@ -37,22 +37,46 @@
 	<form  action="prove_05_info.php" method="post">
 		<div class="container">
 			<h3>Students in database: </h3><br>
-			<p>
-			<?php
-				foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
-				{
-				  echo 'Student ID: ' . $row['id']; 
-				  echo '    ' . $row['first_name'] . ' ' . $row['last_name'] ;
-				  echo '    <button input="submit" name="studentID" value="' . $row['id'] . '">Info</button>' ; 
-				  echo '<br/>';
-				  // add session
-				  $_SESSION["id"] = $row['id'];
-				}
-	
-			?>
-			</p>
+			<table class="table table-striped table-responsive">
+				<thead>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Info</th>
+				</thead>
+				<tbody>
+					<?php
+						foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
+						{
+						  echo '<td>' . $row['id'] .'</td>
+						<td>'. $row['first_name'] . ' ' . $row['last_name']'</td>
+						<td><button input="submit" name="studentID" value="' . $row['id'] . '">Info</button></td>'
+						  
+						  
+						  //echo 'Student ID: ' . $row['id']; 
+						  //echo '    ' . $row['first_name'] . ' ' . $row['last_name'] ;
+						  //echo '    <button input="submit" name="studentID" value="' . $row['id'] . '">Info</button>' ; 
+						  //echo '<br/>';
+						  // add session
+						  //$_SESSION["id"] = $row['id'];
+						}
 			
-		</div>
+					?>
+					
+				</tbody>
+			</table>
+			</div>
+			<form action="prove_05_query.php" method="post" class="form-group">
+				<div class="container">
+				<h3>Student Query</h3>
+				Last Name: <input type="text" class="form-control" name="lName"> <br>
+				<button type="submit" >Search</button>
+				</div>
+			</form>
+
+			
+			
+			
+		
 	</form>
   </body>
 </html>

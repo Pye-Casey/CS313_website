@@ -33,26 +33,47 @@
   ?>
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
-	<h1>Student Info Page</h1>
-	<form action="prove_05.php" method="post">
-		<div class="container">
-			<h3>Students in database: </h3><br>
-			<p>
-			<?php
-				foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
-				{
-				  echo 'Student ID: ' . $row['id']; 
-				  echo '    ' . $row['first_name'] . ' ' . $row['last_name'] ;
-				  echo '    <button input="submit" name="studentID" value="' . $row['id'] . '">Info</button>' ; 
-				  echo '<br/>';
-				  // add session
-				  $_SESSION["id"] = $row['id'];
-				}
+	<h1>Student Info Page</h1><br>
+	<h2>Student Info</h2>
+	<div class="container">
 	
-			?>
-			</p>
-			
-		</div>
-	</form>
+	<div class="row">
+		<strong>First Name:</strong> 
+	</div>
+	<div class="row">
+	<strong>Last Name: </strong> 
+	</div>
+	<div class="row">
+	<strong>Student ID Number: </strong> 
+	</div>
+	<div class="row">
+	<strong>Grade: </strong> 
+	</div>: 
+	</div>
+	<h2>Parents Info</h2>
+	<div class="container">
+	<table class="table table-striped table-responsive">
+				<thead>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Phone</th>
+					<th>Email</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Bob Ross</td>
+						<td>55555555</td>
+						<td>email@mail.com<td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Turd Furgeson</td>
+						<td>5555555</td>
+						<td>email@mail.com<td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
   </body>
 </html>
