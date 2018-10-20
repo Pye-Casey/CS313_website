@@ -47,11 +47,19 @@
 					<?php
 						foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 						{
-						  echo '<td>' . $row['id'] .'</td>
-						<td>'. $row['first_name'] . ' ' . $row['last_name']'</td>
-						<td><button input="submit" name="studentID" value="' . $row['id'] . '">Info</button></td>';
+						  //echo '<td>' . $row['id'] .'</td>
+						//<td>'. $row['first_name'] . ' ' . $row['last_name']'</td>
+						//<td><button input="submit" name="studentID" value="' . $row['id'] . '">Info</button></td>';
 						  
+						  
+						  //echo 'Student ID: ' . $row['id']; 
+						  //echo '    ' . $row['first_name'] . ' ' . $row['last_name'] ;
+						  //echo '    <button input="submit" name="studentID" value="' . $row['id'] . '">Info</button>' ; 
+						  //echo '<br/>';
+						  // add session
+						  //$_SESSION["id"] = $row['id'];
 						}
+						
 			
 					?>
 					
