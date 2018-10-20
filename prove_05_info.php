@@ -35,17 +35,15 @@
 	<?php include 'menu.php'; ?> <!	Add menu !>
 	<?php
 		$sql = 'SELECT first_name, last_name, grade_level FROM student WHERE id="'. $_POST['id'] .'"';
-		//$sql = "SELECT first_name, last_name, grade_level FROM student WHERE id = '2'";
-		//$statement = $db->query($sql);
 		
-		//foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 		foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 			{
 				if ($row['id'] == $_POST['id']) {
 					$id = $row['id'];
 					$fName = $row['first_name'];
 					$lName = $row['last_name'];
-					echo $row['first_name'];
+					$grade = $row['grade_level'];
+					//echo $row['first_name'];
 				}
 				
 			}
@@ -61,16 +59,16 @@
 	<div class="container">
 	
 	<div class="row">
-		<strong>First Name:</strong>  <?php  ?>
+		<strong>First Name:</strong>  <?php echo $fName; ?>
 	</div>
 	<div class="row">
-	<strong>Last Name: </strong> 
+	<strong>Last Name: </strong> <?php echo $lName; ?>
 	</div>
 	<div class="row">
 	<strong>Student ID Number: </strong> <?php echo $_POST['id']?>
 	</div>
 	<div class="row">
-	<strong>Grade: </strong> 
+	<strong>Grade: </strong> <?php echo $grade; ?>
 	</div>: 
 	</div>
 	<h2>Parents Info</h2>
