@@ -35,10 +35,11 @@
 	<?php include 'menu.php'; ?> <!	Add menu !>
 	<?php
 		$statement = $db->query('SELECT id, first_name, last_name, grade_level FROM student WHERE id='. $_POST['id'] .'');
-		echo $_POST['id'];
-		echo $statement['first_name'];
-		echo $statement['last_name'];
-		echo $statement['grade_level'];
+		echo $statement;
+		//echo $_POST['id'];
+		//echo $statement['first_name'];
+		//echo $statement['last_name'];
+		//echo $statement['grade_level'];
 	?>
 	<h1>Student Info Page</h1><br>
 	<h2>Student Info</h2>
