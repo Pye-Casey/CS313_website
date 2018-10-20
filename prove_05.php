@@ -50,6 +50,7 @@
 						  echo '<tr>';
 						  echo '<td>' . $row['id'] .'</td>';
 						  echo '<td>'. $row['first_name'] . ' ' . $row['last_name'] . '</td>';
+						  echo '<td><button input="submit" name="studentID" value="' . $row['id'] . '">Info</button></td>';
 						  echo '</tr>';
 						  //echo '<td>' . $row['id'] .'</td>
 						//<td>'. $row['first_name'] . ' ' . $row['last_name']'</td>
