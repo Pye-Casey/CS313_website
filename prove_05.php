@@ -50,19 +50,11 @@
 						  echo '<tr>';
 						  echo '<td>' . $row['id'] .'</td>';
 						  echo '<td>'. $row['first_name'] . ' ' . $row['last_name'] . '</td>';
-						  echo '<td><button input="submit" name="studentID" value="' . $row['id'] . '">Info</button></td>';
+						  echo '<td><button input="submit" name="id" value="' . $row['id'] . '">Info</button></td>';
 						  echo '</tr>';
-						  //echo '<td>' . $row['id'] .'</td>
-						//<td>'. $row['first_name'] . ' ' . $row['last_name']'</td>
-						//<td><button input="submit" name="studentID" value="' . $row['id'] . '">Info</button></td>';
 						  
-						  
-						  //echo 'Student ID: ' . $row['id']; 
-						  //echo '    ' . $row['first_name'] . ' ' . $row['last_name'] ;
-						  //echo '    <button input="submit" name="studentID" value="' . $row['id'] . '">Info</button>' ; 
-						  //echo '<br/>';
 						  // add session
-						  //$_SESSION["id"] = $row['id'];
+						  $_SESSION["id"] = $row['id'];
 						}
 						
 			
