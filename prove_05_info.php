@@ -43,7 +43,7 @@
 	<div class="container">
 	
 	<div class="row">
-		<strong>First Name:</strong> 
+		<strong>First Name:</strong>  <?php echo $statement['first_name']; ?>
 	</div>
 	<div class="row">
 	<strong>Last Name: </strong> 
