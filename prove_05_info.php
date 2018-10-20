@@ -37,7 +37,7 @@
 		$sql = 'SELECT first_name, last_name, grade_level FROM student WHERE id="'. $_POST['id'] .'"';
 		//$sql = "SELECT first_name, last_name, grade_level FROM student WHERE id = '2'";
 		//$statement = $db->query($sql);
-		$id, $fName, $lName = "";
+		
 		//foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 		foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 			{
