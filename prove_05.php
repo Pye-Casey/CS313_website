@@ -47,9 +47,10 @@
 					<?php
 						foreach ($db->query('SELECT id, first_name, last_name FROM student') as $row)
 						{
-						  echo '<tr><td>' . $row['id'] .'</td>';
-						  echo '<td>'. $row['first_name'] . ' ' . $row['last_name']'</td>';
-						  echo '';
+						  echo '<tr>';
+						  echo '<td>' . $row['id'] .'</td>';
+						  echo '<td>'. $row['first_name'] . ' ' . $row['last_name'] . '</td>';
+						  echo '</tr>';
 						  //echo '<td>' . $row['id'] .'</td>
 						//<td>'. $row['first_name'] . ' ' . $row['last_name']'</td>
 						//<td><button input="submit" name="studentID" value="' . $row['id'] . '">Info</button></td>';
