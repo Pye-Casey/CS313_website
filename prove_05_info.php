@@ -80,8 +80,12 @@
 				$myQuery = "SELECT pr.parent_id, pr.student_id FROM parent_relationship AS pr WHERE pr.student_id = '1'";
 				foreach ($db->query($myQuery) as $row2)
 				{
-					echo $row2['parent_id'];
-				}
+					$parentID = $row2['parent_id'];
+					$parentQuery = "SELECT id, first_name, last_name, email, phone_number FROM parent WHERE id='" . $parentID . "'";
+					foreach ($db->query($parentQuery) as $pRow)
+					{
+						
+					}
 				?>
 					<tr>
 						<td>1</td>
