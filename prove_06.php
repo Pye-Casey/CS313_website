@@ -39,7 +39,9 @@
   
   <body>
 	<h1>PHP Data Modification</h1>
-        <ul id="list1">
+	<form action="prove_05_info.php" method="POST" name="studentEdit" >
+		<h3>Current Students</h3>
+		<ul id="list1">
         <?php foreach ($db->query("SELECT * FROM student") as $row): ?>
             <li>
                 <strong>
@@ -47,14 +49,16 @@
                     <?php echo($row["last_name"]); ?>
                 </strong>
                 &ndash;
-                &ldquo;
-				<button type="button" name="students[]" value="<?=$row['id']?>" formaction="prove_06_view.php">Edit Student</button>
+				<button type="submit" name="students[]" value="<?=$row['id']?>" >Edit Student</button>
 				
 				
 				
             </li>
         <?php endforeach; ?>
         </ul>
+	</form>
+	
+        
         <hr />
         <form method="POST" name="studentForm" >
             <h2>Add a Student</h2>
