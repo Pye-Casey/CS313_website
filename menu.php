@@ -15,7 +15,10 @@
 					<a class="nav-link" href="/prove_03/index.php">Cart</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="prove_05.php">DB</a>
+					<a class="nav-link" href="prove_05.php">DB Access</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="prove_06.php">Data Mod</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link disabled" href="#">Project 1</a>
