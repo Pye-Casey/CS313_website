@@ -63,13 +63,13 @@
             <br />
 			
 			<?php foreach ($db->query("SELECT * FROM student") as $row): ?>
-				<input type="checkbox" name="students[]" value="<?=$row['id']?>"> <?=$row['name']?><br>
+				<input type="checkbox" name="students[]" value="<?=$row['id']?>"> <?=$row['first_name'] . " " . $row['last_name']?><br>
 			<?php endforeach; ?>
 			<br />
 			<input type="checkbox" name="newTopicCheck" value="isNewTopicCheck" />
 			New Topic: <input type="text" name="newTopicText" />
-			<input type="button" value="Submit" onclick="sendScriptures();" />
-            <!-- <input type="submit" value="Submit" formaction="teach06p2.php" /> Stretch 1 and 2 -->
+			
+            <input type="submit" value="Submit" formaction="prove_06_view.php" />
         </form>
   </body>
   
