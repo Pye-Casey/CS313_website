@@ -1,48 +1,54 @@
-<?php
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
-  $dbOpts = parse_url($dbUrl);
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-?>
+
 
 <!DOCTYPE html>
 <html>
     
   <head>
-    <meta charset="utf-8">
-    <title>Prove 6</title> 
-<script type="application/javascript">
-function sendScriptures() {
+    
+	<?php include 'bootstrapScripts.php'; ?>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	<?php
+	try {
+        $dbUrl = getenv('DATABASE_URL');
+                
+        $dbOpts = parse_url($dbUrl);
+                
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
+                
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+                
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $ex) {
+        $msg = $ex->getMessage();
+        echo "Error!: $msg";
+        die();
+        }
+
+  ?>
 	
-}
-</script>	
+    <title>Prove 6</title> 
   </head>
   
   <body>
-	<h1>Scripture Resources</h1>
+	<h1>PHP Data Modification</h1>
         <ul id="list1">
-        <?php foreach ($db->query("SELECT s.book, s.chapter, s.verse, s.content, string_agg(t.name, ', ') FROM scriptures s JOIN scripture_topic st ON s.id = st.scripture_id JOIN topic t ON st.topic_id = t.id GROUP BY s.id") as $row): ?>
+        <?php foreach ($db->query("SELECT * FROM student") as $row): ?>
             <li>
                 <strong>
-                    <?php echo($row["book"]); ?>
-                    <?php echo($row["chapter"]); ?>:<?php echo($row["verse"]); ?>
+                    <?php echo($row["first_name"]); ?>
+                    <?php echo($row["last_name"]); ?>
                 </strong>
                 &ndash;
-                &ldquo;<?php echo($row["content"]); ?>&rdquo;
-				 Topics: <?=$row["string_agg"]?>
+                &ldquo;<?php echo($row["grade_level"]); ?>&rdquo;
+				
             </li>
         <?php endforeach; ?>
         </ul>
