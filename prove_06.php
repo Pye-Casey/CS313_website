@@ -53,17 +53,17 @@
         <?php endforeach; ?>
         </ul>
         <hr />
-        <form method="POST" name="scriptureForm">
-            Book: <input type="text" name="book" />
+        <form method="POST" name="studentForm" >
+            <h2>Add a Student</h2>
+			First Name: <input type="text" name="fName" />
             <br />
-			Chapter: <input type="number" name="chapter" min="1" step="1" />
+			Last Name: <input type="text" name="lName" />
             <br />
-			Verse: <input type="number" name="verse" min="1" step="1" />
+			Grade Level: <input type="number" name="gradeLevel" min="1" step="1" />
             <br />
-			Content: <textarea name="content" rows="10" cols="20"></textarea>
-			<br />
-			<?php foreach ($db->query("SELECT * FROM public.topic") as $row): ?>
-				<input type="checkbox" name="topics[]" value="<?=$row['id']?>"> <?=$row['name']?><br>
+			
+			<?php foreach ($db->query("SELECT * FROM student") as $row): ?>
+				<input type="checkbox" name="students[]" value="<?=$row['id']?>"> <?=$row['name']?><br>
 			<?php endforeach; ?>
 			<br />
 			<input type="checkbox" name="newTopicCheck" value="isNewTopicCheck" />
