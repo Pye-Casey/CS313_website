@@ -47,7 +47,10 @@
                     <?php echo($row["last_name"]); ?>
                 </strong>
                 &ndash;
-                &ldquo;<?php echo($row["grade_level"]); ?>&rdquo;
+                &ldquo;
+				<button type="button" name="students[]" value="<?=$row['id']?>" formaction="prove_06_view.php">Edit Student</button>
+				
+				
 				
             </li>
         <?php endforeach; ?>
