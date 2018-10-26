@@ -60,7 +60,7 @@
 	
         
         <hr />
-        <form method="POST" name="addStudentForm" >
+        <form method="POST" name="addStudentForm" action="prove_06_student.php">
             <h2>Add a Student</h2>
 			First Name: <input type="text" name="fName" />
             <br />
@@ -72,7 +72,7 @@
         </form>
 		
 		<hr />
-        <form method="POST" name="addParentForm" >
+        <form method="POST" name="addParentForm" action="prove_06_parent.php" >
             <h2>Add a Parent</h2>
 			First Name: <input type="text" name="fName" />
             <br />
