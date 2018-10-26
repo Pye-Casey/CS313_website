@@ -60,7 +60,7 @@
 	
         
         <hr />
-        <form method="POST" name="studentForm" >
+        <form method="POST" name="addStudentForm" >
             <h2>Add a Student</h2>
 			First Name: <input type="text" name="fName" />
             <br />
@@ -76,7 +76,7 @@
 			<input type="checkbox" name="newTopicCheck" value="isNewTopicCheck" />
 			New Topic: <input type="text" name="newTopicText" />
 			
-            <input type="submit" value="Submit" formaction="prove_06_view.php" />
+            <input type="submit" value="Submit" formaction="prove_06_student.php" />
         </form>
   </body>
   
