@@ -37,17 +37,17 @@
 			$grade =  htmlspecialchars($grade);
 			
 			// add to database
-			//$query = "INSERT INTO student (first_name, last_name, grade_level) VALUES ('" . //$fName . "','" . $lName . "','" . $grade . "')";
+			$query = "INSERT INTO student (first_name, last_name, grade_level) VALUES ('" . $fName . "','" . $lName . "','" . $grade . "')";
 			echo $query;
 			//$db->query("SELECT * FROM student");
 			//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Bob', 'Ross', '12')");
 			//$newId = $db->lastInsertId('student_id_seq'); // keep the newest student's id
 			//$stmt = $db->prepare($query);
-			$stmt = $db->prepare("INSERT INTO student (first_name, last_name, grade_level) VALUES (?,?,?)");
-			$stmt->bind_param("Bob", "Ross", "8");
+			//$stmt = $db->prepare("INSERT INTO student (first_name, last_name, grade_level) VALUES (?,?,?)");
+			//$stmt->bind_param("Bob", "Ross", "8");
 			//$stmt = $db->prepare("INSERT INTO student (first_name, last_name, grade_level) VALUES ('Bob', 'Ross', 12)");
-			$stmt->execute();
-			$stmt->close();
+			//$stmt->execute();
+			//$stmt->close();
 	}
 
   ?>
