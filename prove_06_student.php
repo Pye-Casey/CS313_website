@@ -31,21 +31,35 @@
         }
 
   ?>
-	
-    <title>Student View</title> 
+	<?php
+		function addParent($fName,$lName, $phone = "", $email = "") {
+			// clean up just in case
+			$fName =  htmlspecialchars($fName);
+			$lName =  htmlspecialchars($lName);
+			$phone =  htmlspecialchars($phone);
+			$email =  htmlspecialchars($email);
+			// add to database
+			$query = "INSERT INTO student (first_name, last_name, email, phone_number) VALUES (" . $fName . "," . $lName . "," . $email . "," . $phone . ")";
+			echo $query;
+			$stmt = $db->prepare($query);
+			$stmt->execute;
+			$stmt->close();
+		}
+	?>
+  <title>Student View</title> 
   </head>
   
   <body>
 	<div>
 	<?php
-		$fName = $_POST["fName"];
-		$lName = $_POST["lName"];
-		$grade = $_POST["gradeLevel"];
+		$fName = htmlspecialchars($_POST["fName"]);
+		$lName = htmlspecialchars($_POST["lName"]);
+		$grade = htmlspecialchars($_POST["gradeLevel"]);
 		$fullName = $fName . " " . $lName;
 		echo $fullName . " has been added!";
 	?>
 	<div>
-	<h1>Student Information</h1>
+	<h3>Current Student List</h3>
 	<form action="prove_05_info.php" method="POST" name="studentEdit" >
 		<h3>Current Students</h3>
 		<ul id="list1">
