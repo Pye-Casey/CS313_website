@@ -41,10 +41,12 @@
 			// add to database
 			$query = "INSERT INTO student (first_name, last_name, grade_level) VALUES ('" . $fName . "','" . $lName . "','" . $grade . "')";
 			echo $query;
+			$db->query($query);
+			$newId = $db->lastInsertId('student_id_seq'); // keep the newest student's id
 			//$stmt = $db->prepare($query);
-			$stmt = $db->prepare("INSERT INTO student (first_name, last_name, grade_level) VALUES ('Bob', 'Ross', 12)");
-			$stmt->execute();
-			$stmt->close();
+			//$stmt = $db->prepare("INSERT INTO student (first_name, last_name, grade_level) VALUES ('Bob', 'Ross', 12)");
+			//$stmt->execute();
+			//$stmt->close();
 		}
 	?>
   <title>Student View</title> 
