@@ -11,25 +11,26 @@
 	<meta charset="utf-8">
 	<?php
 	try {
-		  $dbUrl = getenv('DATABASE_URL');
-		  $dbOpts = parse_url($dbUrl);
-		  $dbHost = $dbOpts["host"];
-		  $dbPort = $dbOpts["port"];
-		  $dbUser = $dbOpts["user"];
-		  $dbPassword = $dbOpts["pass"];
-		  $dbName = ltrim($dbOpts["path"],'/');
-		  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-		  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch (PDOException $ex)
-		{
-		  echo 'Error!: ' . $ex->getMessage();
-		  die();
-		}
-
-  ?>
-	<?php
-		function addParent($fName,$lName, $grade) {
+        $dbUrl = getenv('DATABASE_URL');
+                
+        $dbOpts = parse_url($dbUrl);
+                
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
+                
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+                
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $ex) {
+        $msg = $ex->getMessage();
+        echo "Error!: $msg";
+        die();
+    }
+	
+	function addParent($fName,$lName, $grade) {
 			// clean up just in case
 			$fName =  htmlspecialchars($fName);
 			$lName =  htmlspecialchars($lName);
@@ -37,7 +38,7 @@
 			
 			// add to database
 			//$query = "INSERT INTO student (first_name, last_name, grade_level) VALUES ('" . //$fName . "','" . $lName . "','" . $grade . "')";
-			//echo $query;
+			echo $query;
 			//$db->query("SELECT * FROM student");
 			//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Bob', 'Ross', '12')");
 			//$newId = $db->lastInsertId('student_id_seq'); // keep the newest student's id
@@ -47,7 +48,11 @@
 			//$stmt = $db->prepare("INSERT INTO student (first_name, last_name, grade_level) VALUES ('Bob', 'Ross', 12)");
 			$stmt->execute();
 			$stmt->close();
-		}
+	}
+
+  ?>
+	<?php
+		
 	?>
   <title>Student View</title> 
   </head>
