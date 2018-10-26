@@ -68,7 +68,7 @@
             <br />
 			Grade Level: <input type="number" name="gradeLevel" min="1" step="1" />
             <br />
-			<button type="submit" >Create Parent</button>
+			<button type="submit" >Create Student</button>
         </form>
 		
 		<hr />
