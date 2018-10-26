@@ -36,6 +36,15 @@
   </head>
   
   <body>
+	<div>
+	<?php
+		$fName = $_POST["fName"];
+		$lName = $_POST["lName"];
+		$grade = $_POST["gradeLevel"];
+		$fullName = $fName . " " . $lName;
+		echo $fullName . " has been added!";
+	?>
+	<div>
 	<h1>Student Information</h1>
 	<form action="prove_05_info.php" method="POST" name="studentEdit" >
 		<h3>Current Students</h3>
