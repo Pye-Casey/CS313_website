@@ -69,14 +69,20 @@
 			Grade Level: <input type="number" name="gradeLevel" min="1" step="1" />
             <br />
 			
-			<?php foreach ($db->query("SELECT * FROM student") as $row): ?>
-				<input type="checkbox" name="students[]" value="<?=$row['id']?>"> <?=$row['first_name'] . " " . $row['last_name']?><br>
-			<?php endforeach; ?>
-			<br />
-			<input type="checkbox" name="newTopicCheck" value="isNewTopicCheck" />
-			New Topic: <input type="text" name="newTopicText" />
+        </form>
+		
+		<hr />
+        <form method="POST" name="addParentForm" >
+            <h2>Add a Student</h2>
+			First Name: <input type="text" name="fName" />
+            <br />
+			Last Name: <input type="text" name="lName" />
+            <br />
+			Phone: <input type="number" name="phone" min="1" step="1" />
+			Email: <input type="email" name="email" min="1" step="1" />
+            <br />
 			
-            <input type="submit" value="Submit" formaction="prove_06_student.php" />
+			
         </form>
   </body>
   
