@@ -73,12 +73,13 @@
 		
 		<hr />
         <form method="POST" name="addParentForm" >
-            <h2>Add a Student</h2>
+            <h2>Add a Parent</h2>
 			First Name: <input type="text" name="fName" />
             <br />
 			Last Name: <input type="text" name="lName" />
             <br />
 			Phone: <input type="number" name="phone" min="1" step="1" />
+			<br>
 			Email: <input type="email" name="email" min="1" step="1" />
             <br />
 			
