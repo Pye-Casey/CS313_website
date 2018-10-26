@@ -11,8 +11,6 @@
 	<meta charset="utf-8">
 	<?php
 	try {
-        try
-		{
 		  $dbUrl = getenv('DATABASE_URL');
 		  $dbOpts = parse_url($dbUrl);
 		  $dbHost = $dbOpts["host"];
