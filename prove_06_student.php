@@ -39,7 +39,9 @@
 			// add to database
 			$query = "INSERT INTO student (first_name, last_name, grade_level) VALUES ('" . $fName . "','" . $lName . "','" . $grade . "')";
 			echo $query;
-			$db->query("SELECT * FROM student");
+			$statement = $db->query("SELECT * FROM student");
+			$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+			echo $results;
 			//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Bob', 'Ross', '12')");
 			//$newId = $db->lastInsertId('student_id_seq'); // keep the newest student's id
 			//$stmt = $db->prepare($query);
