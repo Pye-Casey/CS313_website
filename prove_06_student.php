@@ -66,7 +66,9 @@
 		$lName = htmlspecialchars($_POST["lName"]);
 		$grade = htmlspecialchars($_POST["gradeLevel"]);
 		$fullName = $fName . " " . $lName;
-		addParent($fName, $lName, $grade);
+		//addParent($fName, $lName, $grade);
+		
+
 		echo $fullName . " has been added!";
 	?>
 	<div>
