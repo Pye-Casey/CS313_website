@@ -39,7 +39,7 @@
 			$grade =  htmlspecialchars($grade);
 			
 			// add to database
-			$query = "INSERT INTO student (first_name, last_name, grade_level) VALUES (" . $fName . "," . $lName . "," . $grade . ")";
+			$query = "INSERT INTO student (first_name, last_name, grade_level) VALUES ('" . $fName . "','" . $lName . "','" . $grade . "')";
 			echo $query;
 			$stmt = $db->prepare($query);
 			$stmt->execute;
