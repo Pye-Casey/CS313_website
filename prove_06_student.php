@@ -1,4 +1,3 @@
-Prove 6 View
 <!DOCTYPE html>
 <html>
     

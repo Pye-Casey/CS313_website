@@ -47,7 +47,7 @@
 					$fName = $row['first_name'];
 					$lName = $row['last_name'];
 					$grade = $row['grade_level'];
-					//echo $row['first_name'];
+					
 				}
 				
 			}
