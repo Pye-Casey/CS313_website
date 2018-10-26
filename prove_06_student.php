@@ -32,14 +32,14 @@
 
   ?>
 	<?php
-		function addParent($fName,$lName, $phone = "", $email = "") {
+		function addParent($fName,$lName, $grade) {
 			// clean up just in case
 			$fName =  htmlspecialchars($fName);
 			$lName =  htmlspecialchars($lName);
-			$phone =  htmlspecialchars($phone);
-			$email =  htmlspecialchars($email);
+			$grade =  htmlspecialchars($grade);
+			
 			// add to database
-			$query = "INSERT INTO student (first_name, last_name, email, phone_number) VALUES (" . $fName . "," . $lName . "," . $email . "," . $phone . ")";
+			$query = "INSERT INTO student (first_name, last_name, grade_level) VALUES (" . $fName . "," . $lName . "," . $grade . ")";
 			echo $query;
 			$stmt = $db->prepare($query);
 			$stmt->execute;
@@ -56,6 +56,7 @@
 		$lName = htmlspecialchars($_POST["lName"]);
 		$grade = htmlspecialchars($_POST["gradeLevel"]);
 		$fullName = $fName . " " . $lName;
+		addParent($fName, $lName, $grade);
 		echo $fullName . " has been added!";
 	?>
 	<div>
