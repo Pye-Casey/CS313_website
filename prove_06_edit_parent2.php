@@ -35,7 +35,7 @@
 			$id = htmlspecialchars($_POST["id"]);
 		// add to database
 		$query = "UPDATE parent SET first_name='$fName', last_name='$lName', email='$email', phone_number='$phone' WHERE id=$id";
-		echo $query;
+		//echo $query;
 		$insertStatement = $db->query($query);
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
@@ -53,33 +53,13 @@
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
 	
-	<form action="prove_06_edit_parent2.php" method="post">
-		<h1>Edit Parent</h1><br>
-		<h2>Parent Info</h2>
-		<div class="container">
+	<form action="prove_06.php" method="post">
+		<h1>Edit Parent Results</h1><br>
+		<?php 
+			echo $_POST["fName"] . " " . $_POST["lName"] . " has been edited.";
+		?>
 		
-		<div class="row">
-			<strong>First Name:</strong>  
-			<input type="text" name="fName" value="<?=$fName?>">
-			
-		</div>
-		<div class="row">
-		<strong>Last Name: </strong> 
-		<input type="text" name="lName" value="<?=$lName?>">
-		</div>
-		<div class="row">
-		<strong>Parent ID: </strong> <?=$id?>
-		<input type="hidden" name="id"  value="<?=$id?>">
-		</div>
-		<div class="row">
-		<strong>Email: </strong> 
-		<input type="text" name="email" value="<?=$email?>">
-		</div>
-		<div class="row">
-		<strong>Phone: </strong> 
-		<input type="text" name="phone" value="<?=$phone?>">
-		</div>
-		<button type="submit">Save Changes</button>
+		<button type="submit">Back to Parents</button>
 		</div>
 	</form>
   </body>
