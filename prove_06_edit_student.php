@@ -64,13 +64,16 @@
 			
 		</div>
 		<div class="row">
-		<strong>Last Name: </strong> <?php echo $lName; ?>
+		<strong>Last Name: </strong> 
+		<input type="text" name="lName" value="<?=$lName?>">
 		</div>
 		<div class="row">
-		<strong>Student ID: </strong> <?php echo $_POST['id']?>
+		<strong>Student ID: </strong> 
+		<input type="text" name="id" value="<?=$id?>">
 		</div>
 		<div class="row">
-		<strong>Grade: </strong> <?php echo $grade; ?>
+		<strong>Grade: </strong> 
+		<input type="text" name="grade" value="<?=$grade?>">
 		</div>
 		<button type="submit">Save Changes</button>
 		</div>
