@@ -27,7 +27,7 @@
 		//custom
 		$studentID = $_POST['id'];
 		// query information
-		$query = "SELECT * FROM student WHERE id='$studentID'";
+		$query = "SELECT * FROM student WHERE id=$studentID";
 		echo $query;
 		$statement = $db->query($query);
 		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
