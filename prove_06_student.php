@@ -75,7 +75,7 @@
 		
 		//test insert
 		//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
-		$insertStatement = $db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
+		$insertStatement = $db->query("INSERT INTO student(first_name, last_name, grade_level) VALUES ('Pacey', 'Cye', 7)");
 		
 	?>
 	<div>
