@@ -66,10 +66,13 @@
 		$lName = htmlspecialchars($_POST["lName"]);
 		$grade = htmlspecialchars($_POST["gradeLevel"]);
 		$fullName = $fName . " " . $lName;
-		//addParent($fName, $lName, $grade);
-		$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
-
 		echo $fullName . " has been added!";
+		//addParent($fName, $lName, $grade);
+		//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
+		$stmt = $pdo->query('SELECT first_name FROM student WHERE id="1"');
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $row;
+		
 	?>
 	<div>
 	<h3>Current Student List</h3>
