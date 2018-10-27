@@ -69,7 +69,7 @@
 		</div>
 		<div class="row">
 		<strong>Student ID: </strong> 
-		<input type="text" name="id" disabled value="<?=$id?>">
+		<input type="text" name="id"  value="<?=$id?>">
 		</div>
 		<div class="row">
 		<strong>Grade: </strong> 
