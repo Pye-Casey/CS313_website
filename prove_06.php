@@ -39,7 +39,7 @@
   
   <body>
 	<h1>PHP Data Modification</h1>
-	<form action="prove_06_student_edit.php" method="POST" name="studentEdit" >
+	<form action="prove_06_edit_student.php" method="POST" name="studentEdit" >
 		<h3>Current Students</h3>
 		<ul id="list1">
         <?php foreach ($db->query("SELECT * FROM student") as $row): ?>
