@@ -69,7 +69,7 @@
 		echo $fullName . " has been added!";
 		//addParent($fName, $lName, $grade);
 		//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
-		$stmt = $pdo->query('SELECT first_name FROM student WHERE id="1"');
+		$stmt = $db->query('SELECT first_name FROM student WHERE id="1"');
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		return $row;
 		
