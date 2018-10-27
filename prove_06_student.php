@@ -31,25 +31,21 @@
     }
 	
 	function addParent($fName,$lName, $grade) {
+			
+			
+			// add to database
+			//$query = 
+			//$insertStatement = $db->query("INSERT INTO student(first_name, last_name, grade_level) VALUES ('Pacey', 'Cye', 7)");
+			// Use prepared statements
+			$insertStatement = $db->prepare("INSERT INTO student(first_name, last_name, grade_level) VALUES (?,?,?)");
+			$insertStatement->bind_param($fName,$lName,$grade);
 			// clean up just in case
 			$fName =  htmlspecialchars($fName);
 			$lName =  htmlspecialchars($lName);
 			$grade =  htmlspecialchars($grade);
-			
-			// add to database
-			$query = "INSERT INTO student (first_name, last_name, grade_level) VALUES ('" . $fName . "','" . $lName . "','" . $grade . "')";
-			echo $query;
-			$statement = $db->query("SELECT * FROM student");
-			$results = $statement->fetchAll(PDO::FETCH_ASSOC);
-			echo $results;
-			//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Bob', 'Ross', '12')");
-			//$newId = $db->lastInsertId('student_id_seq'); // keep the newest student's id
-			//$stmt = $db->prepare($query);
-			//$stmt = $db->prepare("INSERT INTO student (first_name, last_name, grade_level) VALUES (?,?,?)");
-			//$stmt->bind_param("Bob", "Ross", "8");
-			//$stmt = $db->prepare("INSERT INTO student (first_name, last_name, grade_level) VALUES ('Bob', 'Ross', 12)");
-			//$stmt->execute();
-			//$stmt->close();
+			$insertStatement->execute();
+			//shut down
+			$insertStatement->close();
 	}
 
   ?>
@@ -66,12 +62,12 @@
 		$lName = htmlspecialchars($_POST["lName"]);
 		$grade = htmlspecialchars($_POST["gradeLevel"]);
 		$fullName = $fName . " " . $lName;
-		echo $fullName . " has been added!";
+		echo $fullName . " has been added! <br>";
 		//addParent($fName, $lName, $grade);
 		//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
-		$stmt = $db->query('SELECT first_name FROM student WHERE id=1');
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
-		echo $row["first_name"] . "<br>";
+		//$stmt = $db->query('SELECT first_name FROM student WHERE id=1');
+		//$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		//echo $row["first_name"] . "<br>";
 		
 		//test insert
 		//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
