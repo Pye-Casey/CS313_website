@@ -67,7 +67,7 @@
 		$grade = htmlspecialchars($_POST["gradeLevel"]);
 		$fullName = $fName . " " . $lName;
 		//addParent($fName, $lName, $grade);
-		$db->query("INSERT INTO student (first_name, last_name,grade_level VALUES ('Bob','Ross','6')");
+		$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
 
 		echo $fullName . " has been added!";
 	?>
