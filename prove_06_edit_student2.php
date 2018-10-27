@@ -34,7 +34,8 @@
 			$grade =  htmlspecialchars($_POST["grade"]);
 			$id = htmlspecialchars($_POST["id"]);
 		// add to database
-		$query = "UPDATE student SET first_name='$fName', last_name='$lName', grade_level=$grade WHERE id='$id'";
+		$query = "UPDATE student SET 'first_name'='$fName', 'last_name'='$lName', 'grade_level'=$grade WHERE 'id'=$id";
+		echo $query;
 		$insertStatement = $db->query($query);
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
