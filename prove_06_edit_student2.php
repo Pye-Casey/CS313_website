@@ -31,10 +31,10 @@
 		// clean up just in case
 			$fName =  htmlspecialchars($_POST["fName"]);
 			$lName =  htmlspecialchars($_POST["lName"]);
-			$grade =  htmlspecialchars($_POST["grade_level"]);
+			$grade =  htmlspecialchars($_POST["grade"]);
 			$id = htmlspecialchars($_POST["id"]);
 		// add to database
-		$query = "UPDATE student SET first_name='$fName', last_name='$lName', grade_level='$grade' WHERE id=$id";
+		$query = "UPDATE student SET first_name='$fName', last_name='$lName', grade_level='$grade' WHERE id='$id'";
 		$insertStatement = $db->query($query);
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
