@@ -37,7 +37,7 @@
 			$grade =  htmlspecialchars($grade);
 		// add to database
 			//$query = 
-		$insertStatement = $db->query("INSERT INTO student(first_name, last_name, grade_level) VALUES ('"$fName"', '"$lName"', "$grade")");
+		$insertStatement = $db->query("INSERT INTO student(first_name, last_name, grade_level) VALUES ('$fName', '$lName', $grade)");
 			// Use prepared statements
 			/*$insertStatement = $db->prepare("INSERT INTO student(first_name, last_name, grade_level) VALUES (?,?,?)");
 			$insertStatement->bind_param($fName,$lName,$grade);
