@@ -27,14 +27,24 @@
 		//custom
 		$studentID = $_POST['id'];
 		// query information
-		$query = "SELECT * FROM student WHERE id=$studentID";
+		$query = "SELECT * FROM student";
 		echo $query;
-		$statement = $db->query($query);
-		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+		foreach ($db->query('SELECT id, first_name, last_name, grade_level FROM student') as $row)
+			{
+				if ($row['id'] == $_POST['id']) {
+					$id = $row['id'];
+					$fName = $row['first_name'];
+					$lName = $row['last_name'];
+					$grade = $row['grade_level'];
+				}
+				
+			}
+		//$statement = $db->query($query);
+		/*$results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		$fName = $results["first_name"];
 		echo $fName;
 		$lName = $results["last_name"];
-		$grade = $results["grade_level"];
+		$grade = $results["grade_level"];*/
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
         echo "Error!: $msg";
