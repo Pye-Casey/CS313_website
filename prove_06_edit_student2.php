@@ -28,15 +28,14 @@
 		$studentID = $_POST['id'];
 		// query information
 		$query = "SELECT * FROM student";
-		foreach ($db->query('SELECT id, first_name, last_name, grade_level FROM student') as $row)
-			{
-				if ($row['id'] == $_POST['id']) {
-					$id = $row['id'];
-					$fName = $row['first_name'];
-					$lName = $row['last_name'];
-					$grade = $row['grade_level'];
-				}
-			}
+		// clean up just in case
+			$fName =  htmlspecialchars($_POST["fName"]);
+			$lName =  htmlspecialchars($_POST["lName"]);
+			$grade =  htmlspecialchars($_POST["grade_level"]);
+			$id = htmlspecialchars($_POST["id"]);
+		// add to database
+		$query = "UPDATE student SET first_name='$fName', last_name='$lName', grade_level='$grade' WHERE id='$id'";
+		$insertStatement = $db->query($query);
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
         echo "Error!: $msg";
@@ -53,30 +52,13 @@
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
 	
-	<form action="prove_06_edit_student2.php" method="post">
+	<form action="prove_06.php" method="post">
 		<h1>Edit Student Results</h1><br>
 		<?php 
 			echo $_POST["fName"] . " " . $_POST["lName"] . " has been edited.";
 		?>
-		<p>$fName $lName has been edited</p>
-		<h2>Student Info</h2>
-		<div class="container">
 		
-		<div class="row">
-			<strong>First Name:</strong>  
-			<input type="text" name="fName" value="<?=$fName?>">
-			
-		</div>
-		<div class="row">
-		<strong>Last Name: </strong> <?php echo $lName; ?>
-		</div>
-		<div class="row">
-		<strong>Student ID: </strong> <?php echo $_POST['id']?>
-		</div>
-		<div class="row">
-		<strong>Grade: </strong> <?php echo $grade; ?>
-		</div>
-		<button type="submit">Save Changes</button>
+		<button type="submit">Back to Students</button>
 		</div>
 	</form>
   </body>
