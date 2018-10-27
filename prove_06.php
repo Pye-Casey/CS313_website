@@ -69,7 +69,23 @@
         </form>
 		
 		<hr />
-        <form method="POST" name="addParentForm" action="prove_06_parent.php" >
+        <form action="prove_06_edit_parent.php" method="POST" name="parentEdit" >
+		<h3>Current Parents</h3>
+		<ul id="list1">
+        <?php foreach ($db->query("SELECT * FROM parent") as $row): ?>
+            <li>
+                <strong>
+                    <?php echo($row["first_name"]); ?>
+                    <?php echo($row["last_name"]); ?>
+                </strong>
+                &ndash;
+				<button type="submit" name="id" value="<?=$row['id']?>" >Edit</button>	
+            </li>
+        <?php endforeach; ?>
+        </ul>
+	</form>
+		
+		<form method="POST" name="addParentForm" action="prove_06_parent.php" >
             <h2>Add a Parent</h2>
 			First Name: <input type="text" name="fName" />
             <br />
