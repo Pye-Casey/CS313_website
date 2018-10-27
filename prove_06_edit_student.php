@@ -24,14 +24,23 @@
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//custom
+		$studentID = $_POST['id'];
+		// query information
+		$query = "SELECT * FROM student WHERE id='$studentID'";
+		$statement = $db->query($query);
+		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+		$fName = $results["first_name"];
+		$lName = $results["last_name"];
+		$grade = $results["grade_level"];
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
         echo "Error!: $msg";
         die();
     }
 		
-	$studentID = $_POST['id'];
-	echo $studentID;
+	
+	
   ?>
 	
     <title>Edit Student</title> 
@@ -39,24 +48,27 @@
   
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
-
-	<h1>Edit Student</h1><br>
-	<h2>Student Info</h2>
-	<div class="container">
 	
-	<div class="row">
-		<strong>First Name:</strong>  <?php echo $fName; ?>
-	</div>
-	<div class="row">
-	<strong>Last Name: </strong> <?php echo $lName; ?>
-	</div>
-	<div class="row">
-	<strong>Student ID: </strong> <?php echo $_POST['id']?>
-	</div>
-	<div class="row">
-	<strong>Grade: </strong> <?php echo $grade; ?>
-	</div>: 
-	</div>
+	<form action="prove_06_edit_student2.php" method="post">
+		<h1>Edit Student</h1><br>
+		<h2>Student Info</h2>
+		<div class="container">
+		
+		<div class="row">
+			<strong>First Name:</strong>  <?php echo $fName; ?>
+		</div>
+		<div class="row">
+		<strong>Last Name: </strong> <?php echo $lName; ?>
+		</div>
+		<div class="row">
+		<strong>Student ID: </strong> <?php echo $_POST['id']?>
+		</div>
+		<div class="row">
+		<strong>Grade: </strong> <?php echo $grade; ?>
+		</div>
+		<button type="submit">Save Changes</button>
+		</div>
+	</form>
   </body>
   
  </html>
