@@ -49,10 +49,7 @@
                     <?php echo($row["last_name"]); ?>
                 </strong>
                 &ndash;
-				<button type="submit" name="students[]" value="<?=$row['id']?>" >Edit Student</button>
-				
-				
-				
+				<button type="submit" name="id" value="<?=$row['id']?>" >Edit</button>	
             </li>
         <?php endforeach; ?>
         </ul>

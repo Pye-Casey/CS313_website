@@ -28,32 +28,19 @@
         $msg = $ex->getMessage();
         echo "Error!: $msg";
         die();
-        }
-
+    }
+		
+	$studentID = $_POST['id'];
+	echo $studentID;
   ?>
 	
-    <title>Prove 6</title> 
+    <title>Edit Student</title> 
   </head>
   
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
-	<?php
-		$sql = 'SELECT first_name, last_name, grade_level FROM student WHERE id="'. $_POST['id'] .'"';
-		
-		foreach ($db->query('SELECT id, first_name, last_name, grade_level FROM student') as $row)
-			{
-				if ($row['id'] == $_POST['id']) {
-					$id = $row['id'];
-					$fName = $row['first_name'];
-					$lName = $row['last_name'];
-					$grade = $row['grade_level'];
-					
-				}
-				
-			}
-		
-	?>
-	<h1>Student Info Page</h1><br>
+
+	<h1>Edit Student</h1><br>
 	<h2>Student Info</h2>
 	<div class="container">
 	

@@ -81,7 +81,7 @@
 	</p>
 	<div>
   <body>
-	<h1>Parent Information</h1>
+	<h3>Parent Information</h3>
 	<form action="prove_06_view.php" method="POST" name="parentEdit" >
 		<h3>Current Parents</h3>
 		<ul id="list1">
