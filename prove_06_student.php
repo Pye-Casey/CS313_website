@@ -70,6 +70,8 @@
 		//addParent($fName, $lName, $grade);
 		//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
 		$stmt = $db->query('SELECT first_name FROM student WHERE id=1');
+		echo $stmt;
+		
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		echo $row;
 		
