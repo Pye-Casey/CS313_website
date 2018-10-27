@@ -53,25 +53,11 @@
 		// add to database
 		$query = "INSERT INTO student(first_name, last_name, grade_level) VALUES ('$fName', '$lName', $grade)";
 		$insertStatement = $db->query($query);
-		//$insertStatement = $db->query("INSERT INTO student(first_name, last_name, grade_level) VALUES ('$fName', '$lName', $grade)");
-		
-    } catch (PDOException $ex) {
-        $msg = $ex->getMessage();
-        echo "Error!: $msg";
-        die();
-    }
-		
-		
-			// Use prepared statements
-			/*$insertStatement = $db->prepare("INSERT INTO student(first_name, last_name, grade_level) VALUES (?,?,?)");
-			$insertStatement->bind_param($fName,$lName,$grade);
-			// clean up just in case
-			$fName =  htmlspecialchars($fName);
-			$lName =  htmlspecialchars($lName);
-			$grade =  htmlspecialchars($grade);
-			$insertStatement->execute();
-			//shut down
-			$insertStatement->close(); */
+		} catch (PDOException $ex) {
+			$msg = $ex->getMessage();
+			echo "Error!: $msg";
+			die();
+		}	
 	}
 
   ?>
@@ -83,24 +69,20 @@
   
   <body>
 	<div>
+	<h3>Student Addition Status:</h3>
+	<p>
 	<?php
 		$fName = htmlspecialchars($_POST["fName"]);
 		$lName = htmlspecialchars($_POST["lName"]);
 		$grade = htmlspecialchars($_POST["gradeLevel"]);
+		addParent($fName, $lName, $grade);
 		$fullName = $fName . " " . $lName;
 		echo $fullName . " has been added! <br>";
-		addParent($fName, $lName, $grade);
-		//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
-		//$stmt = $db->query('SELECT first_name FROM student WHERE id=1');
-		//$row = $stmt->fetch(PDO::FETCH_ASSOC);
-		//echo $row["first_name"] . "<br>";
 		
-		//test insert
-		//$db->query("INSERT INTO student('first_name', 'last_name', 'grade_level') VALUES ('Pacey', 'Cye', 7)");
-		//WORKS
-		//$insertStatement = $db->query("INSERT INTO student(first_name, last_name, grade_level) VALUES ('Pacey', 'Cye', 7)");
+		
 		
 	?>
+	</p>
 	<div>
 	<h3>Current Student List</h3>
 	<form action="prove_05_info.php" method="POST" name="studentEdit" >
