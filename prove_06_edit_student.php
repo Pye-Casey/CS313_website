@@ -68,8 +68,8 @@
 		<input type="text" name="lName" value="<?=$lName?>">
 		</div>
 		<div class="row">
-		<strong>Student ID: </strong> 
-		<input type="text" name="id"  value="<?=$id?>">
+		<strong>Student ID: </strong> <?=$id?>
+		<input type="hidden" name="id"  value="<?=$id?>">
 		</div>
 		<div class="row">
 		<strong>Grade: </strong> 
