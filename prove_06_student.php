@@ -47,7 +47,8 @@
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
 			//Customized
-			$insertStatement = $db->prepare("INSERT INTO student(first_name, last_name, grade_level) VALUES (?,?,?)");
+			dbInstance = db::getInstance();
+			$insertStatement = $dbInstance->prepare("INSERT INTO student(first_name, last_name, grade_level) VALUES (?,?,?)");
 			$insertStatement->bind_param($fName,$lName,$grade);
 			// clean up just in case
 			$fName =  htmlspecialchars($fName);
