@@ -82,6 +82,9 @@
 		</div>
 		<button type="submit">Save Changes</button>
 		</div>
+		<div>
+		<button type="submit" formaction="prove_06_delete_parent.php">Delete Parent</button>
+		</div>
 	</form>
   </body>
   

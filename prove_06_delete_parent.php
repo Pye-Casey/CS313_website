@@ -34,7 +34,7 @@
 			$phone =  htmlspecialchars($_POST["phone"]);
 			$id = htmlspecialchars($_POST["id"]);
 		// add to database
-		$query = "UPDATE parent SET first_name='$fName', last_name='$lName', email='$email', phone_number='$phone' WHERE id=$id";
+		$query = "DELETE FROM parent WHERE id=$id";
 		//echo $query;
 		$insertStatement = $db->query($query);
         } catch (PDOException $ex) {
@@ -47,16 +47,16 @@
 	
   ?>
 	
-    <title>Edit Parent</title> 
+    <title>Delete Parent</title> 
   </head>
   
   <body>
 	<?php include 'menu.php'; ?> <!	Add menu !>
 	
 	<form action="prove_06.php" method="post">
-		<h1>Edit Parent Results</h1><br>
+		<h1>Delete Parent Results</h1><br>
 		<?php 
-			echo $_POST["fName"] . " " . $_POST["lName"] . " has been edited.";
+			echo $_POST["fName"] . " " . $_POST["lName"] . " has been deleted.";
 		?>
 		
 		<button type="submit">Back to Parents</button>
