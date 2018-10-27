@@ -10,6 +10,27 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 	<?php
+	
+	try {
+        $dbUrl = getenv('DATABASE_URL');
+                
+        $dbOpts = parse_url($dbUrl);
+                
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
+                
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+                
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $ex) {
+        $msg = $ex->getMessage();
+        echo "Error!: $msg";
+        die();
+    }
+	
 	function addParent($fName,$lName, $email, $phone ) {
 		try {
         $dbUrl = getenv('DATABASE_URL');
@@ -62,7 +83,7 @@
   <body>
 	<h1>Parent Information</h1>
 	<form action="prove_06_view.php" method="POST" name="parentEdit" >
-		<h3>Current Students</h3>
+		<h3>Current Parents</h3>
 		<ul id="list1">
         <?php foreach ($db->query("SELECT * FROM parent") as $row): ?>
             <li>
@@ -71,10 +92,8 @@
                     <?php echo($row["last_name"]); ?>
                 </strong>
                 &ndash;
-				<button type="submit" name="students[]" value="<?=$row['id']?>" >Edit Parent</button>
-				
-				
-				
+				<button type="submit" name="students[]" value="<?=$row['id']?>" >Edit</button>
+		
             </li>
         <?php endforeach; ?>
         </ul>

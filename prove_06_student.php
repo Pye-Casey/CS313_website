@@ -82,17 +82,17 @@
 	</p>
 	<div>
 	<h3>Current Student List</h3>
-	<form action="prove_06_edit_parent.php" method="POST" name="parentEdit" >
+	<form action="prove_06_edit_student.php" method="POST" name="studentEdit" >
 		<h3>Current Parents</h3>
 		<ul id="list1">
-        <?php foreach ($db->query("SELECT * FROM parent") as $row): ?>
+        <?php foreach ($db->query("SELECT * FROM student") as $row): ?>
             <li>
                 <strong>
                     <?php echo($row["first_name"]); ?>
                     <?php echo($row["last_name"]); ?>
                 </strong>
                 &ndash;
-				<button type="submit" name="students[]" value="<?=$row['id']?>" >Edit Parent</button>
+				<button type="submit" name="students[]" value="<?=$row['id']?>" >Edit</button>
 				
 				
 				
