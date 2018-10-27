@@ -28,7 +28,6 @@
 		$studentID = $_POST['id'];
 		// query information
 		$query = "SELECT * FROM student";
-		echo $query;
 		foreach ($db->query('SELECT id, first_name, last_name, grade_level FROM student') as $row)
 			{
 				if ($row['id'] == $_POST['id']) {
@@ -37,14 +36,7 @@
 					$lName = $row['last_name'];
 					$grade = $row['grade_level'];
 				}
-				
 			}
-		//$statement = $db->query($query);
-		/*$results = $statement->fetchAll(PDO::FETCH_ASSOC);
-		$fName = $results["first_name"];
-		echo $fName;
-		$lName = $results["last_name"];
-		$grade = $results["grade_level"];*/
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
         echo "Error!: $msg";
@@ -67,7 +59,9 @@
 		<div class="container">
 		
 		<div class="row">
-			<strong>First Name:</strong>  <?php echo $fName; ?>
+			<strong>First Name:</strong>  
+			<input type="text" name="fName" value="<?=$fName?>">
+			
 		</div>
 		<div class="row">
 		<strong>Last Name: </strong> <?php echo $lName; ?>
