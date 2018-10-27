@@ -73,7 +73,7 @@
 		//echo $stmt["first_name"];
 		
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
-		echo $row;
+		echo $row["first_name"];
 		
 	?>
 	<div>
