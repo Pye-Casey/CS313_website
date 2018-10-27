@@ -45,15 +45,15 @@
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
-		//custom
+
 		// clean up just in case
 			$fName =  htmlspecialchars($fName);
 			$lName =  htmlspecialchars($lName);
 			$grade =  htmlspecialchars($grade);
 		// add to database
-			//$query = 
-		$insertStatement = $db->query("INSERT INTO student(first_name, last_name, grade_level) VALUES ('$fName', '$lName', $grade)");
+		$query = "INSERT INTO student(first_name, last_name, grade_level) VALUES ('$fName', '$lName', $grade)";
+		$insertStatement = $db->query($query);
+		//$insertStatement = $db->query("INSERT INTO student(first_name, last_name, grade_level) VALUES ('$fName', '$lName', $grade)");
 		
     } catch (PDOException $ex) {
         $msg = $ex->getMessage();
