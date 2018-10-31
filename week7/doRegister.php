@@ -37,6 +37,7 @@
     $username = htmlspecialchars($username);
     $password = htmlspecialchars($password);
 	
+	echo "Username: " . $username;
 
     // query the database
     $success = (function() {
@@ -60,7 +61,7 @@
             return true;
         } catch (PDOException $ex) {
 			echo $ex->getMessage();
-			echo $username;
+			
 			die();
             return false;
         }
