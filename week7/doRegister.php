@@ -36,17 +36,27 @@
     // sanitize input
     $username = htmlspecialchars($username);
     $password = htmlspecialchars($password);
-	echo "Username";
-	die();
 	
-	;
 
     // query the database
     $success = (function() {
         // return true or false depending on success
         try {
-            require("dbconnect.php");
+            
             // add the db->query code here
+			// hash the password
+			$password = password_hash($password, PASSWORD_DEFAULT);
+
+			// connect to our db and set $db
+			require("dbconnect.php");
+
+			// create this new row
+			$stmt_insert_user = $db->prepare('INSERT INTO teach07_user (username, password) VALUES (:username, :password)');
+			$stmt_insert_user->bindValue(':username', $username);
+			$stmt_insert_user->bindValue(':password', $password);
+			$stmt_insert_user->execute();
+			
+			
             return true;
         } catch (PDOException $ex) {
             return false;
