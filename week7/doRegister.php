@@ -55,7 +55,7 @@
 			$stmt_insert_user->bindValue(':username', $username);
 			$stmt_insert_user->bindValue(':password', $password);
 			$stmt_insert_user->execute();
-			
+			   
 			
             $success = true;
         } catch (PDOException $ex) {
