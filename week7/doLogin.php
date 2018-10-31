@@ -52,7 +52,7 @@
 
     // upon login, send the user to the welcome page
     if ($success) {
-        login();
+        login($username);
     // otherwise, send the user back with an error message
     } else {
         loginFail();
