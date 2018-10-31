@@ -40,8 +40,7 @@
 	echo "Username: " . $username;
 
     // query the database
-    $success = (function() {
-        // return true or false depending on success
+    
         try {
             
             // add the db->query code here
@@ -58,14 +57,13 @@
 			$stmt_insert_user->execute();
 			
 			
-            return true;
+            $success = true;
         } catch (PDOException $ex) {
-			echo $ex->getMessage();
-			
+			echo $ex->getMessage();			
 			die();
-            return false;
+            $success =  false;
         }
-    })();
+
 
     // upon registration, redirect the user to the login page
     if ($success) {
