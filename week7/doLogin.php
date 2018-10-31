@@ -18,7 +18,7 @@
 
     // check if valid
     $validUsername = isPopulated($username);
-    $validPassowrd = isPopulated($password);
+    $validPassword = isPopulated($password);
     if (!$validUsername || !$validPassword) {
         loginFail();
     }
@@ -38,7 +38,7 @@
 			$stmt->execute();
 			// get rows
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
-			var_dump("$row");
+			var_dump($row);
 			die();
 			
             $success =  true;
