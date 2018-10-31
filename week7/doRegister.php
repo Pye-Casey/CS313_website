@@ -19,7 +19,7 @@
 
     // check if valid
     $PASSWORD_MIN_LENGTH = 8;
-    $PASSWORD_MAX_LENGTH = 64;
+    $PASSWORD_MAX_LENGTH = 124;
     $validUsername = isPopulated($username);
     $validPassowrd = (
         isPopulated($password) &&
@@ -35,7 +35,10 @@
     // sanitize input
     $username = htmlspecialchars($username);
     $password = htmlspecialchars($password);
-
+	echo "Username";
+	die();
+	
+	;
 
     // query the database
     $success = (function() {
