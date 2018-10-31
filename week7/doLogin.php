@@ -40,17 +40,12 @@
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
 			$hash = $row["password"];
 			// See the password_hash() example to see where this came from.
-			//$hash = '$2y$07$BCryptRequires22Chrcte/VlQH0piJtjXl.0t1XkA8pw9dMXTpOq';
-
 			if (password_verify($password, $hash)) {
-			echo 'Password is valid!';
+				$success =  true;
 			} else {
-			echo 'Invalid password.';
+				$success = false;
 			}
-			var_dump($row);
-			die();
-			
-            $success =  true;
+            
         } catch (PDOException $ex) {
             $success = false;
         }
