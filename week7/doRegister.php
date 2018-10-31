@@ -32,6 +32,7 @@
         registerFail();
     }
 
+	
     // sanitize input
     $username = htmlspecialchars($username);
     $password = htmlspecialchars($password);
