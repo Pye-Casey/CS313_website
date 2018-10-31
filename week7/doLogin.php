@@ -26,18 +26,25 @@
     // sanitize input
     $username = htmlspecialchars($username);
     $password = htmlspecialchars($password);
+	//$passHash = password_hash($password, PASSWORD_DEFAULT);
 
     // query the database
-    $success = (function() {
-        // return true or false depending on success
+    
         try {
             require("dbconnect.php");
             // add the db->query code here
-            return true;
+			$stmt = $db->prepare('SELECT password FROM teach07_user WHERE username=:username');
+			$stmt->bindValue(':username', $username);
+			$stmt->execute();
+			// get rows
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+			var_dump("$row");
+			die();
+			
+            $success =  true;
         } catch (PDOException $ex) {
-            return false;
+            $success = false;
         }
-    })();
 
     // upon login, send the user to the welcome page
     if ($success) {
