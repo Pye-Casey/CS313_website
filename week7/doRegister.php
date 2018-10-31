@@ -23,8 +23,8 @@
     $validUsername = isPopulated($username);
     $validPassword = (
         isPopulated($password) &&
-        count($password) >= PASSWORD_MIN_LENGTH &&
-        count($password) <= PASSWORD_MAX_LENGTH &&
+        count($password) >= $PASSWORD_MIN_LENGTH &&
+        count($password) <= $PASSWORD_MAX_LENGTH &&
         $password == $confirm
     );
     
