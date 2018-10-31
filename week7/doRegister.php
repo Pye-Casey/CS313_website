@@ -21,7 +21,7 @@
     $PASSWORD_MIN_LENGTH = 8;
     $PASSWORD_MAX_LENGTH = 124;
     $validUsername = isPopulated($username);
-    $validPassowrd = (
+    $validPassword = (
         isPopulated($password) &&
         count($password) >= PASSWORD_MIN_LENGTH &&
         count($password) <= PASSWORD_MAX_LENGTH &&
