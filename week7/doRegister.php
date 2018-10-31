@@ -60,6 +60,7 @@
             return true;
         } catch (PDOException $ex) {
 			echo $ex->getMessage();
+			echo $username;
 			die();
             return false;
         }
