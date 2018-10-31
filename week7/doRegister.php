@@ -16,7 +16,6 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
     $confirm = $_POST["confirm"];
-    $fullname = $_POST["fullname"];
 
     // check if valid
     $PASSWORD_MIN_LENGTH = 8;
@@ -28,15 +27,15 @@
         count($password) <= PASSWORD_MAX_LENGTH &&
         $password == $confirm
     );
-    $validFullname = isPopulated($fullname);
-    if (!$validUsername || !$validPassword || !$validFullName) {
+    
+    if (!$validUsername || !$validPassword) {
         registerFail();
     }
 
     // sanitize input
     $username = htmlspecialchars($username);
     $password = htmlspecialchars($password);
-    $fullname = htmlspecialchars($fullname);
+
 
     // query the database
     $success = (function() {
