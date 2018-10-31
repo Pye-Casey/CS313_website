@@ -59,6 +59,8 @@
 			
             return true;
         } catch (PDOException $ex) {
+			echo $ex->getMessage();
+			die();
             return false;
         }
     })();
