@@ -57,4 +57,36 @@
 			die();
         }
 	}
+	
+	function addEvent($fName,$lName, $grade) {
+		try {
+        $dbUrl = getenv('DATABASE_URL');
+                
+        $dbOpts = parse_url($dbUrl);
+                
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
+                
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+                
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		// clean up just in case
+			$fName =  htmlspecialchars($fName);
+			$lName =  htmlspecialchars($lName);
+			$grade =  htmlspecialchars($grade);
+		// add to database
+		$query = "INSERT INTO (first_name, last_name, grade_level) VALUES ('$fName', '$lName', $grade)";
+		$insertStatement = $db->query($query);
+		} catch (PDOException $ex) {
+			$msg = $ex->getMessage();
+			echo "Error!: $msg";
+			die();
+		}	
+	}
+
+ 
 ?>
