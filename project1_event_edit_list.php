@@ -19,29 +19,38 @@
 		<h2>Student Edit List</h2>
 	<p>Select a student to edit from the list below.</p>
 		<div class="container">
-		  <table class="table table-hover table-responsive">
-			<thead>
+		  <thead>
 			  <tr>
 				<th>Student Name</th>
-				<th>Grade</th>
 				<th>Reffering Staff</th>
+				<th>Time</th>
+				<th>Date</th>
 				<th>Location</th>
-				<th>Description<th>
-				<th></th>
+				<th>Description</th>
+				<th>View</th>
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr>
-				<td>John Doe</td>
-				<td>6</td>
-				<td>Mike Johnson</td>
-				<td>play ground</td>
-				<td>I can't believe what this little turd did today!</td>
-				<td>
-					<button type="submit" class="btn btn-warning">Edit</button>
+			<?php
+				// Add rows
+				$db = queryDB('SELECT e.id, e.student_id, e.staff_name, e.location, e.description, e.time, s.first_name, s.last_name, s.grade_level FROM behavior.events AS e, behavior.students AS s WHERE e.student_id = s.id');
+				//$db = queryDB("SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id");
+			?>
+				
+			<?php foreach ($db as $row):?>
+				<tr>
+				<td><?php echo ($row['first_name'] . " " . $row['last_name']);?></td>
+				<td> <?php echo ($row['staff_name']);?></td>				
+				<td><?php echo ($row['time']);?></td>
+				<td><?php echo ($row['date']);?></td>
+				<td><?php echo ($row['location']);?></td>
+				<td><?php echo ($row['description']);?></td>
+				<td><?php echo ($row["e.id"]);?>
+					<button type='submit' value='<?php echo ($row["id"]);?>' name='id' class='btn btn-warning'>Edit</button>
 				</td>
-			  </tr>
-			  
+				</tr>
+			
+			<?php endforeach;?>
 			</tbody>
 		  </table>
 		</div>
