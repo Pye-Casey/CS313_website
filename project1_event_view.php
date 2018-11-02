@@ -13,24 +13,24 @@
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = 'SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id';
+		$query = 'SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id';
 		
-		foreach ($db->query(sql) as $row)
-			{
-				if ($row['id'] == $_POST['id']) {
-					$id = $row['id'];
-					$fName = $row['first_name'];
-					$lName = $row['last_name'];
-					$time = $row['time'];
-					$location = $row['location'];
-					$grade = $row['grade_level'];
-					$description = $row['description'];
-					$date = $row['date'];
-					$staff = $row['staff_name'];
-					//echo $row['first_name'];
-				}
-				
+		foreach ($db->query($query) as $row)
+		{
+			if ($row['events.id'] == $_POST['id']) {
+				$id = $row['id'];
+				$fName = $row['first_name'];
+				$lName = $row['last_name'];
+				$time = $row['time'];
+				$location = $row['location'];
+				$grade = $row['grade_level'];
+				$description = $row['description'];
+				$date = $row['date'];
+				$staff = $row['staff_name'];
+				//echo $row['first_name'];
 			}
+				
+		}
 		
         } catch (PDOException $ex) {
 			$msg = $ex->getMessage();
