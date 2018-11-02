@@ -42,7 +42,29 @@
 				//$db = queryDB("SELECT * FROM behavior.events");
 				
 				$db = queryDB("SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id");
-				foreach ($db as $row)
+			?>
+				
+				<?php foreach ($db as $row):?>
+					<tr>
+					<td>
+						<?php echo ($row['first_name'] . " " . $row['last_name']);?>
+					</td>
+					<td> <?php echo ($row['staff_name']);?></td>
+						
+					<td><?php echo ($row['time']);?> </td>
+					<td><?php echo ($row['date']);?> </td>
+					<td><?php echo ($row['location']);?></td>
+					<td><?php echo ($row['description']);?> </td>
+					<td>
+						<button type='submit' value='<?php echo ($row['id']);?>' name='id' class='btn btn-primary'>View</button>
+					</td>
+					</tr>
+				
+				<?php endforeach;?>
+				
+				
+			<?php	
+				/*foreach ($db as $row)
 				{
 				// Get student name
 				$id = $row['student_id'];
@@ -58,7 +80,7 @@
 				echo "<td><button type='submit' value='$row['id']' name='id' class='btn btn-primary'>View</button>";
 				echo "</td>";
 				echo "</tr>"; 
-				}
+				} */
 			?>
 			  <tr>
 				<td>John</td>
