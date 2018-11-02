@@ -44,15 +44,12 @@
 				
 			<?php foreach ($db as $row):?>
 				<tr>
-				<td>
-					<?php echo ($row['first_name'] . " " . $row['last_name']);?>
-				</td>
-				<td> <?php echo ($row['staff_name']);?></td>
-					
-				<td><?php echo ($row['time']);?> </td>
-				<td><?php echo ($row['date']);?> </td>
+				<td><?php echo ($row['first_name'] . " " . $row['last_name']);?></td>
+				<td> <?php echo ($row['staff_name']);?></td>				
+				<td><?php echo ($row['time']);?></td>
+				<td><?php echo ($row['date']);?></td>
 				<td><?php echo ($row['location']);?></td>
-				<td><?php echo ($row['description']);?> </td>
+				<td><?php echo ($row['description']);?></td>
 				<td>
 					<button type='submit' value='<?php echo ($row['id']);?>' name='id' class='btn btn-primary'>View</button>
 				</td>
