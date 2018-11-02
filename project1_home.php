@@ -44,7 +44,7 @@
 				$id = $row['id'];
 				echo "ID: " . $id . "<br>"; 
 				// Add table rows
-				echo "<tr>;"
+				echo "<tr>";
 				echo "<td>" . $row['first_name'] ."</td>";
 				echo "<td>" . $row['last_name'] ."</td>";
 				echo "<td>" . $row['id'] ."</td>";
@@ -52,7 +52,7 @@
 				echo "<td>";
 					echo "<button type="submit" value="' . $row['id'] . '" name="id" class="btn btn-primary">View</button>";
 				echo "</td>";
-				echo "</tr>";
+				echo "</tr>"; 
 				}
 			?>
 			  <tr>
