@@ -16,7 +16,7 @@
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	<form action="project1_student_view.php" method="post">
+	<form action="project1_event_view.php" method="post">
 	<div class="container">
 		<h2>Student Behavior Tracker</h2>
 		<p>Welcome to the Student Behavior Tracker.</p>
