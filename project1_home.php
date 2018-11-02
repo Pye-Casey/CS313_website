@@ -43,7 +43,7 @@
 				foreach ($db as $row)
 				{
 				// Get student name
-				$id = $row['id'];
+				$id = $row['student_id'];
 				echo "ID: " . $id . "<br>"; 
 				// process student name
 				$sName = getName($id);
