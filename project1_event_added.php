@@ -15,6 +15,7 @@
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
 	<div class="container">
 	<form action="project1_event_add.php" >
+	<?php var_dump($_POST); ?>
 	<?php
 		// add event
 		try {
