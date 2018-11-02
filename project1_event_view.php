@@ -17,16 +17,16 @@
 		// $query = 'SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id';
 		foreach ($db->query($query) as $row)
 		{
-			if ($row['e.id'] == $_POST['id']) {
-				$id = $row['e.id'];
-				$fName = $row['s.first_name'];
-				$lName = $row['s.last_name'];
-				$time = $row['e.time'];
+			if ($row['id'] == $_POST['id']) {
+				$id = $row['id'];
+				$fName = $row['first_name'];
+				$lName = $row['last_name'];
+				$time = $row['time'];
 				$location = $row['location'];
-				$grade = $row['s.grade_level'];
-				$description = $row['e.description'];
-				$date = $row['e.date'];
-				$staff = $row['e.staff_name'];
+				$grade = $row['grade_level'];
+				$description = $row['description'];
+				$date = $row['date'];
+				$staff = $row['staff_name'];
 				
 			}
 				
