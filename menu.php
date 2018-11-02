@@ -18,10 +18,10 @@
 					<a class="nav-link" href="prove_05.php">DB Access</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="prove_06.php">Data Mod</a>
+					<a class="nav-link" href="prove_06.php">Data Mod</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Project 1</a>
+					<a class="nav-link" href="project1_logon.php">Behavior Project</a>
 				</li>
 			</ul>
 		</div>
