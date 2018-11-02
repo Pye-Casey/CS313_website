@@ -42,7 +42,7 @@
 		// add to database
 		$query = "INSERT INTO behavior.events (student_id, staff_name, location, description, time, date) VALUES(:student_id, :staff_name, :location,:description, CURRENT_TIME, CURRENT_DATE)";
 		//$query = "INSERT INTO student(first_name, last_name, grade_level) VALUES ('$fName', '$lName', $grade)";
-		$insertStatement = $db->query($query);
+		//$insertStatement = $db->query($query);
 		
 		// create this new row
 		$stmt_insert_user = $db->prepare($query);
@@ -50,8 +50,8 @@
 		$stmt_insert_user->bindValue(':staff_name', $staff);
 		$stmt_insert_user->bindValue(':location', $location);
 		$stmt_insert_user->bindValue(':description', $description);
-		$stmt_insert_user->execute();
-		
+		$stmt_insert_user->execute(); 
+		echo "<h2><label name="info">Event Added!</label></h2>";
 		} catch (PDOException $ex) {
 			$msg = $ex->getMessage();
 			echo "Error!: $msg";
