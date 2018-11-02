@@ -1,3 +1,6 @@
+<?php
+	require("project1_db.php");
+?>
 <!DOCTYPE html>
 <html>
   
