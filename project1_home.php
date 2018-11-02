@@ -33,65 +33,32 @@
 				<th>Date</th>
 				<th>Location<th>
 				<th>Description</th>
-				<th></th>
+				<th>View</th>
 			  </tr>
 			</thead>
 			<tbody>
 			<?php
 				// Add rows
-				//$db = queryDB("SELECT * FROM behavior.events");
-				
 				$db = queryDB("SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id");
 			?>
 				
-				<?php foreach ($db as $row):?>
-					<tr>
-					<td>
-						<?php echo ($row['first_name'] . " " . $row['last_name']);?>
-					</td>
-					<td> <?php echo ($row['staff_name']);?></td>
-						
-					<td><?php echo ($row['time']);?> </td>
-					<td><?php echo ($row['date']);?> </td>
-					<td><?php echo ($row['location']);?></td>
-					<td><?php echo ($row['description']);?> </td>
-					<td>
-						<button type='submit' value='<?php echo ($row['id']);?>' name='id' class='btn btn-primary'>View</button>
-					</td>
-					</tr>
-				
-				<?php endforeach;?>
-				
-				
-			<?php	
-				/*foreach ($db as $row)
-				{
-				// Get student name
-				$id = $row['student_id'];
-				
-				// Add table rows
-				echo "<tr>";
-				echo "<td>" . $row['first_name']. " " . $row['last_name'] . "</td>";
-				echo "<td>" . $row['staff_name'] ."</td>";
-				echo "<td>" . $row['time'] ."</td>";
-				echo "<td>" . $row['date'] ."</td>";
-				echo "<td>" . $row['location'] ."</td>";
-				echo "<td>" . $row['description'] ."</td>";
-				echo "<td><button type='submit' value='$row['id']' name='id' class='btn btn-primary'>View</button>";
-				echo "</td>";
-				echo "</tr>"; 
-				} */
-			?>
-			  <tr>
-				<td>John</td>
-				<td>Doe</td>
-				<td>6</td>
-				<td>I can't believe what this little turd did today!</td>
+			<?php foreach ($db as $row):?>
+				<tr>
 				<td>
-					<button type="submit" class="btn btn-primary">View</button>
+					<?php echo ($row['first_name'] . " " . $row['last_name']);?>
 				</td>
-			  </tr>
-			 
+				<td> <?php echo ($row['staff_name']);?></td>
+					
+				<td><?php echo ($row['time']);?> </td>
+				<td><?php echo ($row['date']);?> </td>
+				<td><?php echo ($row['location']);?></td>
+				<td><?php echo ($row['description']);?> </td>
+				<td>
+					<button type='submit' value='<?php echo ($row['id']);?>' name='id' class='btn btn-primary'>View</button>
+				</td>
+				</tr>
+			
+			<?php endforeach;?>
 			</tbody>
 		  </table>
 		</div>
