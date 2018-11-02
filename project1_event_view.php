@@ -54,7 +54,7 @@
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	
+	<?= $id; ?>
 	<div class="container">
 	<form action="project1_events_view.php" >
 	<h2><label name="info">Event View </label></h2>
