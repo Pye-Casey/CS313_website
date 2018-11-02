@@ -46,9 +46,6 @@
 				{
 				// Get student name
 				$id = $row['student_id'];
-				echo "ID: " . $id . "<br>"; 
-				// process student name
-				//$sName = getName($id);
 				
 				// Add table rows
 				echo "<tr>";
@@ -58,8 +55,7 @@
 				echo "<td>" . $row['date'] ."</td>";
 				echo "<td>" . $row['location'] ."</td>";
 				echo "<td>" . $row['description'] ."</td>";
-				echo "<td>";
-					//echo "<button type='submit' value="' . $row['id'] . '" name="id" class="btn btn-primary">View</button>";
+				echo "<td><button type='submit' value='$row['id']' name='id' class='btn btn-primary'>View</button>";
 				echo "</td>";
 				echo "</tr>"; 
 				}
