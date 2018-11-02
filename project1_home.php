@@ -27,10 +27,12 @@
 		  <table class="table table-hover table-responsive">
 			<thead>
 			  <tr>
-				<th>Firstname</th>
-				<th>Lastname</th>
-				<th>Grade</th>
-				<th>Description<th>
+				<th>Student Name</th>
+				<th>Reffering Staff</th>
+				<th>Time</th>
+				<th>Date</th>
+				<th>Location<th>
+				<th>Description</th>
 				<th></th>
 			  </tr>
 			</thead>
@@ -43,12 +45,17 @@
 				// Get student name
 				$id = $row['id'];
 				echo "ID: " . $id . "<br>"; 
+				// process student name
+				$sName = getName($id);
+				
 				// Add table rows
 				echo "<tr>";
-				echo "<td>" . $row['first_name'] ."</td>";
-				echo "<td>" . $row['last_name'] ."</td>";
-				echo "<td>" . $row['id'] ."</td>";
-				echo "<td></td>";
+				echo "<td>" . $sname ."</td>";
+				echo "<td>" . $row['staff_name'] ."</td>";
+				echo "<td>" . $row['time'] ."</td>";
+				echo "<td>" . $row['date'] ."</td>";
+				echo "<td>" . $row['location'] ."</td>";
+				echo "<td>" . $row['description'] ."</td>";
 				echo "<td>";
 					//echo "<button type='submit' value="' . $row['id'] . '" name="id" class="btn btn-primary">View</button>";
 				echo "</td>";
