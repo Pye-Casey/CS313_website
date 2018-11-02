@@ -13,7 +13,7 @@
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sQuery = "SELECT * FROM behavior.students WHERE id='$_POST['id']'" ;
+		$sQuery = "SELECT * FROM behavior.students WHERE id='" . $_POST['id'] . "'" ;
 		//$db = queryDB('SELECT * FROM behaviors.events WHERE id = $_POST["id"]');
 		$statement = $db->query($sQuery);
 		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
