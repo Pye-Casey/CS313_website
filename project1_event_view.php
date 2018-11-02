@@ -19,14 +19,14 @@
 		{
 			if ($row['events.id'] == $_POST['id']) {
 				$id = $row['events.id'];
-				$fName = $row['students.first_name'];
-				$lName = $row['students.last_name'];
-				$time = $row['events.time'];
+				$fName = $row['first_name'];
+				$lName = $row['last_name'];
+				$time = $row['time'];
 				$location = $row['events.location'];
 				$grade = $row['students.grade_level'];
 				$description = $row['description'];
-				$date = $row['events.date'];
-				$staff = $row['events.staff_name'];
+				$date = $row['date'];
+				$staff = $row['staff_name'];
 				
 			}
 				
