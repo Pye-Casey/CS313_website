@@ -13,12 +13,12 @@
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$query = 'SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id';
-		
+		$query = 'SELECT e.id, e.student_id, e.staff_name, e.location, e.description, e.time, s.first_name, s.last_name, s.grade_level FROM behavior.events AS e, behavior.students AS s WHERE events.student_id = students.id';
+		// $query = 'SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id';
 		foreach ($db->query($query) as $row)
 		{
 			if ($row['events.id'] == $_POST['id']) {
-				$id = $row['events.id'];
+				$id = $row['id'];
 				$fName = $row['first_name'];
 				$lName = $row['last_name'];
 				$time = $row['time'];
