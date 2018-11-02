@@ -24,7 +24,7 @@
 				$time = $row['events.time'];
 				$location = $row['events.location'];
 				$grade = $row['students.grade_level'];
-				$description = $row['events.description'];
+				$description = $row['description'];
 				$date = $row['events.date'];
 				$staff = $row['events.staff_name'];
 				
