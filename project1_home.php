@@ -1,10 +1,13 @@
+<?php
+	require("project1_db.php");
+?>
 <!DOCTYPE html>
 <html>
-  
+
 
   <head>
 	<meta charset="utf-8">
-
+	
     <title>Behavior Tracker</title> 
   </head>
   <script>
@@ -32,6 +35,26 @@
 			  </tr>
 			</thead>
 			<tbody>
+			<?php
+				// Add rows
+				$db = queryDB("SELECT * FROM behavior.events");
+				foreach ($db as $row)
+				{
+				// Get student name
+				$id = $row['id'];
+				echo "ID: " . $id . "<br>";
+				// Add table rows
+				echo "<tr>;"
+				echo "<td>" . $row['first_name'] ."</td>";
+				echo "<td>" . $row['last_name'] ."</td>";
+				echo "<td>" . $row['id'] ."</td>";
+				echo "<td></td>";
+				echo "<td>";
+					echo "<button type="submit" value="' . $row['id'] . '" name="id" class="btn btn-primary">View</button>";
+				echo "</td>";
+				echo "</tr>";
+				}
+			?>
 			  <tr>
 				<td>John</td>
 				<td>Doe</td>
