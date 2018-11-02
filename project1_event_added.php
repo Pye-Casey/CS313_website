@@ -51,7 +51,7 @@
 		$stmt_insert_user->bindValue(':location', $location);
 		$stmt_insert_user->bindValue(':description', $description);
 		$stmt_insert_user->execute(); 
-		echo "<h2><label name="info">Event Added!</label></h2>";
+		echo "<h2><label name='info'>Event Added!</label></h2>";
 		} catch (PDOException $ex) {
 			$msg = $ex->getMessage();
 			echo "Error!: $msg";
