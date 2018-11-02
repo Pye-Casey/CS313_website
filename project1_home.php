@@ -50,7 +50,7 @@
 				echo "<td>" . $row['id'] ."</td>";
 				echo "<td></td>";
 				echo "<td>";
-					echo "<button type="submit" value="' . $row['id'] . '" name="id" class="btn btn-primary">View</button>";
+					//echo "<button type='submit' value="' . $row['id'] . '" name="id" class="btn btn-primary">View</button>";
 				echo "</td>";
 				echo "</tr>"; 
 				}
