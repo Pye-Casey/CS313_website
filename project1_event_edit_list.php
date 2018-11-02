@@ -22,7 +22,10 @@
 		<h2>Student Edit List</h2>
 	<p>Select a student to edit from the list below.</p>
 		<div class="container">
-		  <thead>
+		  <h3>Behavior Event List:</h3>
+		         
+		  <table class="table table-hover table-responsive">
+			<thead>
 			  <tr>
 				<th>Student Name</th>
 				<th>Reffering Staff</th>
@@ -57,8 +60,6 @@
 			</tbody>
 		  </table>
 		</div>
-
-	</div>
 	</form>
 	
 	
