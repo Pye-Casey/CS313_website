@@ -52,7 +52,7 @@
 				<td><?php echo ($row['location']);?></td>
 				<td><?php echo ($row['description']);?></td>
 				<td><?php echo ($row["e.id"]);?>
-					<button type='submit' value='<?php echo ($row["e.id"]);?>' name='id' class='btn btn-primary'>View</button>
+					<button type='submit' value='<?php echo ($row["id"]);?>' name='id' class='btn btn-primary'>View</button>
 				</td>
 				</tr>
 			
