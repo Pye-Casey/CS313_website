@@ -35,10 +35,9 @@
 
 		// clean up just in case
 			$studentID =  htmlspecialchars($_POST["studentID"]);
-			echo "Student ID: " . $studentID . "<br>";
-			$staff =  htmlspecialchars($staff);
-			$location =  htmlspecialchars($location);
-			$description =  htmlspecialchars($description);
+			$staff =  htmlspecialchars($_POST["staff"]);
+			$location =  htmlspecialchars($_POST["location"]);
+			$description =  htmlspecialchars($_POST["description"]);
 			
 		// add to database
 		$query = "INSERT INTO behavior.events (student_id, staff_name, location, description, time, date) VALUES(:student_id, :staff_name, :location,:description, CURRENT_TIME, CURRENT_DATE)";
