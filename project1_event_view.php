@@ -17,7 +17,7 @@
 		// $query = 'SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id';
 		foreach ($db->query($query) as $row)
 		{
-			if ($row['events.id'] == $_POST['id']) {
+			if ($row['e.id'] == $_POST['id']) {
 				$id = $row['id'];
 				$fName = $row['first_name'];
 				$lName = $row['last_name'];
