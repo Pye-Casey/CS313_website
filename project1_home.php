@@ -42,7 +42,7 @@
 				{
 				// Get student name
 				$id = $row['id'];
-				echo "ID: " . $id . "<br>";
+				echo "ID: " . $id . "<br>"; 
 				// Add table rows
 				echo "<tr>;"
 				echo "<td>" . $row['first_name'] ."</td>";
