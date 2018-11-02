@@ -18,9 +18,13 @@
 	
 	<h2>Add a Behavior Event</h2>
 	<div class="form-group">
-		<label for="studentName">First Name:</label>
-		<select class="form-control" id="studentName">
+		<label for="studentName">Student Name:</label>
+		<select class="form-control" id="studentID">
 			<option></option>
+			<?php
+				foreach ($db->query("SELECT * FROM behavior.students") as $row):?>
+					<option value="<?= $row["id"];?>"><?= $row["first_name"] . " " . $row["last_name"];?></option>
+			<?php endforeach;?>
 		</select>
 	</div>
 	<div class="form-group">
