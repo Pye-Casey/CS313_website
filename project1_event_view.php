@@ -55,7 +55,7 @@
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
 	<?= "ID: " . $id . "<br>"; ?>
-	<?= "$_Post: " . $_POST["id"] . "<br>"; ?>
+	<?= "Post: " . $_POST["id"] . "<br>"; ?>
 	<div class="container">
 	<form action="project1_events_view.php" >
 	<h2><label name="info">Event View </label></h2>
