@@ -51,7 +51,7 @@
 				<td><?php echo ($row['date']);?></td>
 				<td><?php echo ($row['location']);?></td>
 				<td><?php echo ($row['description']);?></td>
-				<td>
+				<td><?php echo ($row["e.id"]);?>
 					<button type='submit' value='<?php echo ($row["e.id"]);?>' name='id' class='btn btn-primary'>View</button>
 				</td>
 				</tr>
