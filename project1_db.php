@@ -46,6 +46,8 @@
 			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			$fName = $results["first_name"];
 			$lName = $results["last_name"];
+			echo "First Name: " . $fName;
+			echo "Last Name: $lName";
 			$name = $fName . " " . $lName;
 			return $name;
         } catch (PDOException $ex) {
