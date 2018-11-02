@@ -18,16 +18,17 @@
 		foreach ($db->query($query) as $row)
 		{
 			if ($row['events.id'] == $_POST['id']) {
-				$id = $row['id'];
-				$fName = $row['first_name'];
-				$lName = $row['last_name'];
-				$time = $row['time'];
-				$location = $row['location'];
-				$grade = $row['grade_level'];
-				$description = $row['description'];
-				$date = $row['date'];
-				$staff = $row['staff_name'];
-				//echo $row['first_name'];
+				$id = $row['events.id'];
+				$fName = $row['students.first_name'];
+				$lName = $row['students.last_name'];
+				$time = $row['events.time'];
+				$location = $row['events.location'];
+				$grade = $row['students.grade_level'];
+				$description = $row['events.description'];
+				$date = $row['events.date'];
+				$staff = $row['events.staff_name'];
+				echo $_POST['id'];
+				echo $description;
 			}
 				
 		}
