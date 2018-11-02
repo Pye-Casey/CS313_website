@@ -52,7 +52,7 @@
 			return $name;
         } catch (PDOException $ex) {
 			$msg = $ex->getMessage();
-			echo "Error!: $msg";
+			//echo "Error!: $msg";
 			return false;
 			die();
         }

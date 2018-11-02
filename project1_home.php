@@ -39,18 +39,20 @@
 			<tbody>
 			<?php
 				// Add rows
-				$db = queryDB("SELECT * FROM behavior.events");
+				//$db = queryDB("SELECT * FROM behavior.events");
+				
+				$db = queryDB("SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id");
 				foreach ($db as $row)
 				{
 				// Get student name
 				$id = $row['student_id'];
 				echo "ID: " . $id . "<br>"; 
 				// process student name
-				$sName = getName($id);
+				//$sName = getName($id);
 				
 				// Add table rows
 				echo "<tr>";
-				echo "<td>" . $sname ."</td>";
+				echo "<td>" . $row['first_name']. " " . $row['last_name'] . "</td>";
 				echo "<td>" . $row['staff_name'] ."</td>";
 				echo "<td>" . $row['time'] ."</td>";
 				echo "<td>" . $row['date'] ."</td>";
