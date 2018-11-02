@@ -31,8 +31,8 @@
 				<th>Reffering Staff</th>
 				<th>Time</th>
 				<th>Date</th>
-				<th>Location<th>
-				<th>Description</th>
+				<th>loc</th>
+				<th>Desc</th>
 				<th>View</th>
 			  </tr>
 			</thead>
