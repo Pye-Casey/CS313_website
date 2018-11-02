@@ -22,8 +22,8 @@
 				$fName = $row['first_name'];
 				$lName = $row['last_name'];
 				$time = $row['time'];
-				$location = $row['events.location'];
-				$grade = $row['students.grade_level'];
+				$location = $row['location'];
+				$grade = $row['grade_level'];
 				$description = $row['description'];
 				$date = $row['date'];
 				$staff = $row['staff_name'];
