@@ -5,7 +5,7 @@
   <head>
 	<meta charset="utf-8">
 
-    <title>Student View</title> 
+    <title>Behavior Tracker</title> 
   </head>
   <script>
 	
@@ -18,7 +18,7 @@
 	<h2><label name="info">Event View </label></h2>
 	<p>The following are the details to the requested behavior request.</p>
 	<div class="form-group">
-		<label for="studentName">Student Name:</label>
+		<label for="studentName">Student Name:<?php echo $_POST["first_Name"] . " " . $_POST["last_name"] ?></label>
 		<label type="text" class="" id="studentName"></label>
 	</div>
 	
