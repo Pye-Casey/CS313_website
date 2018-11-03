@@ -6,7 +6,7 @@
   </head>
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	
+	<?php var_dump($_POST); ?>
 	<div class="container">
 	<form action="project1_student_edit_list.php" >
 	<h2><label name="info">Student Edit</label></h2>
@@ -45,7 +45,7 @@
 	?>
 	
 	</div>
-	<button type="submit" formaction="project1_student_edit_list.php" class="btn btn-success" >Back</button>
+	<button type="submit" formaction="project1_student_view.php" class="btn btn-success" >Back</button>
 	</form>
 	</div>
   </body>
