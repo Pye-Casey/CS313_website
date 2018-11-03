@@ -31,6 +31,7 @@
 				<th>Lastname</th>
 				<th>Grade</th>
 				<th>View</th>
+				<th>Edit</th>
 			  </tr>
 			</thead>
 			<tbody>
@@ -46,6 +47,9 @@
 				<td><?= $row['grade_level'];?></td>			
 				<td>
 					<button type='submit' value='<?=$row["id"];?>' name='id' class='btn btn-primary'>View</button>
+				</td>
+				<td>
+					<button type='submit' value='<?=$row["id"];?>' name='editID' formaction="project1_student_edit.php" class='btn btn-warning'>Edit</button>
 				</td>
 				</tr>
 			<?php endforeach;?>
