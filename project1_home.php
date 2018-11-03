@@ -15,7 +15,51 @@
             header("Location: project1_logon.php");
             exit();
         }
-	$_Session["username"] = $validUsername;
+	
+	
+	// query the database
+    try {
+        $dbUrl = getenv('DATABASE_URL');
+        
+        $dbOpts = parse_url($dbUrl);
+        
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
+
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		// check username
+		$stmt = $db->prepare('SELECT password FROM behavior.user WHERE username=:username');
+			$stmt->bindValue(':username', $username);
+			$stmt->execute();
+		// get rows
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+			$hash = $row["password"];
+			// See the password_hash() example to see where this came from.
+			if ($password == $hash)) {
+				$_Session["username"] = $validUsername;
+			} else {
+				session_destroy();
+				header("HTTP/1.1 401 Unauthorized");
+				header("Location: project1_logon.php");
+				exit();
+			}
+		
+		
+    } catch (PDOException $ex) {
+        $msg = $ex->getMessage();
+		header("HTTP/1.1 401 Unauthorized");
+            header("Location: project1_logon.php");
+            exit();
+        echo "Error!: $msg";
+        die();
+    }
+	
+      
 ?>
 <!DOCTYPE html>
 <html>
