@@ -11,7 +11,8 @@
         $dbName = ltrim($dbOpts["path"],'/');
                 
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-                
+        
+
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		// Get event info
 		//$db = queryDB('SELECT * FROM behavior.events WHERE id = ' . $_POST["id"]);
@@ -26,7 +27,6 @@
 		//$db = queryDB('SELECT * FROM behaviors.events WHERE id = $_POST["id"]');
 		$statement = $db->query($sQuery);
 		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
-		echo $results["first_name"];
 		//student info
 		$studentID = $results["id"];
 		$studentName =  $results["first_name"] . " " .  $results["last_name"];
@@ -53,9 +53,10 @@
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	<?php var_dump($_POST); 
-		echo $sQuery . "<br>";
+	<?php var_dump($_POST . "<br>"); 
+		echo "Student Query: " .  $sQuery . "<br>";
 		echo "Student id: " . $studentID . "<br>";
+		echo "Staff id: " . $staff . "<br>";
 	?>
 	<div class="container">
 	<form action="project1_event_edited.php" name="editEventForm" method="post">
