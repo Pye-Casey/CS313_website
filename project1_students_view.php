@@ -42,10 +42,10 @@
 			<?php foreach ($db as $row):?>
 				<tr>
 				<td><?= $row['first_name'];?></td>
-				<td> <?= $row['last_name']);?></td>				
-				<td><?= $row['grade_level']);?></td>			
+				<td> <?= $row['last_name'];?></td>				
+				<td><?= $row['grade_level'];?></td>			
 				<td>
-					<button type='submit' value='<?php echo ($row["id"]);?>' name='id' class='btn btn-primary'>View</button>
+					<button type='submit' value='<?=$row["id"];?>' name='id' class='btn btn-primary'>View</button>
 				</td>
 				</tr>
 			<?php endforeach;?>
