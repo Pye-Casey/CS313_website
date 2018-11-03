@@ -34,14 +34,14 @@
 			   <h2>Login</h2>
 			   <p>Enter your email and password below.</p>
 		   </div>
-			<form id="Login" action="project1_home.php">
+			<form id="Login" action="project1_home.php" method="post">
 
 				<div class="form-group">
-					<input type="email" class="form-control" id="inputEmail" placeholder="Username">
+					<input type="email" class="form-control" id="inputEmail" name="username" placeholder="Username">
 				</div>
 
 				<div class="form-group">
-					<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+					<input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
 				</div>
 				<br>
 				<button type="submit" class="btn btn-primary">Login</button>
