@@ -56,15 +56,15 @@
 	<h2>Edit Student</h2>
 	<div class="form-group">
 		<label for="fName">First Name:</label>
-		<input type="text" class="form-control" id="fName" value="<?=$fName;?>">
+		<input type="text" class="form-control" id="fName" name="fName" value="<?=$fName;?>">
 	</div>
 	<div class="form-group">
 		<label for="lName">Last Name:</label>
-		<input type="text" class="form-control" id="lName" value="<?=$lName;?>">
+		<input type="text" class="form-control" id="lName" name="lName" value="<?=$lName;?>">
 	</div>
 	<div class="form-group">
 		<label for="grade">Grade Level:</label>
-		<input type="number" name="gradeLevel" min="0" step="1" class="form-control" id="grade" value="<?=$grade;?>">
+		<input type="number" name="gradeLevel" min="0" step="1" name="grade" class="form-control" id="grade" value="<?=$grade;?>">
 	</div>
 	<input type="text" name="id" hidden value="<?=$id;?>">
 	<div class="form-group">
