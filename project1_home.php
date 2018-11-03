@@ -1,5 +1,21 @@
 <?php
 	require("project1_db.php");
+	session_start();
+	
+	// get details
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // check if valid
+    $validUsername = isPopulated($username);
+    $validPassword = isPopulated($password);
+	
+	if (!isset($validUsername) || empty($validUsername)) {
+            header("HTTP/1.1 401 Unauthorized");
+            header("Location: project1_logon.php");
+            exit();
+        }
+	$_Session["username"] = $validUsername;
 ?>
 <!DOCTYPE html>
 <html>
