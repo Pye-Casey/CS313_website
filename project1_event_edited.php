@@ -13,10 +13,7 @@
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	<?php var_dump($_POST);
-		echo "Student ID: " . $_POST["studentID"] . "<br>";
-		echo "Description: " . $_POST["description"] . "<br>";
-	?>
+	
 	<div class="container">
 	<form action="project1_student_edit_list.php" >
 	<h2>Event Status</h2>
