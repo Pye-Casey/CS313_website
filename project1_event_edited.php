@@ -42,7 +42,7 @@
 		$stmt->bindValue(':studentID', $_POST["studentID"]);
 		$stmt->bindValue(':staff', $_POST["staff"]);
 		$stmt->bindValue(':location', $_POST["location"]);
-		$stmt->bindValue(':description', $_POST["location"]);
+		$stmt->bindValue(':description', $_POST["description"]);
 		$stmt->execute(); 
 		echo "<p>The event has been edited.</p>";
 		
