@@ -14,7 +14,7 @@
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
 	<div class="container">
-	<form action="project1_student_edit_list.php" >
+	<form action="project1_students_view.php" >
 	<h2><label name="info">Student Deletion</label></h2>
 	
 	<?php
@@ -50,7 +50,7 @@
 		}
 
 	?>
-	<button type="submit" formaction="project1_student_edit_list.php" class="btn btn-success" >Back</button>
+	<button type="submit"  class="btn btn-success" >Back</button>
 	</form>
 	</div>
   </body>
