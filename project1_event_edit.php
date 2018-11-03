@@ -21,9 +21,10 @@
 			{
 				if ($row['id'] == $_POST['id']) {
 					$id = $row['id'];
-					$staff = $behaviorResult["staff_name"];
-					$location = $behaviorResult["location"];
-					$description = $behaviorResult["description"];
+					$staff = $row["staff_name"];
+					$location = $row["location"];
+					$description = $row["description"];
+					$studentID =  $row["student_id"];
 				}
 				
 			}
