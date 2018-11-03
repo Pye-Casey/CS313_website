@@ -32,11 +32,19 @@
 		// Get student info
 		$sQuery = "SELECT * FROM behavior.students WHERE id='" . $studentID . "'" ;
 		//$db = queryDB('SELECT * FROM behaviors.events WHERE id = $_POST["id"]');
-		$statement = $db->query($sQuery);
-		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+		foreach ($db->query($sQuery) as $row)
+			{
+				if ($row['id'] == $studentID) {
+					
+					$studentName = $row["first_name"] . " " . $row["last_name"];
+					
+					
+				}
+				
+			}
 		//student info
 		//$studentID = $results["id"];
-		$studentName =  $results["first_name"] . " " .  $results["last_name"];
+		//$studentName =  $results["first_name"] . " " .  $results["last_name"];
 		
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
@@ -54,10 +62,7 @@
 
     <title>Behavior Tracker</title> 
   </head>
-  <script>
-	
-  </script>
-  
+
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
 	<?php var_dump($_POST . "<br>"); 
