@@ -39,8 +39,9 @@
 		// get rows
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
 			$hash = $row["password"];
-			// See the password_hash() example to see where this came from.
-			if ($password == $hash)) {
+			
+			if (strcmp($password, $hash) !== 0) 
+			{
 				$_Session["username"] = $validUsername;
 			} else {
 				session_destroy();
