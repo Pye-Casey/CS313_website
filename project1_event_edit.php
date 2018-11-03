@@ -30,12 +30,12 @@
 			}
 		
 		// Get student info
-		$sQuery = "SELECT * FROM behavior.students WHERE id='" . $_POST['id'] . "'" ;
+		$sQuery = "SELECT * FROM behavior.students WHERE id='" . $studentID . "'" ;
 		//$db = queryDB('SELECT * FROM behaviors.events WHERE id = $_POST["id"]');
 		$statement = $db->query($sQuery);
 		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		//student info
-		$studentID = $results["id"];
+		//$studentID = $results["id"];
 		$studentName =  $results["first_name"] . " " .  $results["last_name"];
 		
         } catch (PDOException $ex) {
@@ -63,6 +63,7 @@
 	<?php var_dump($_POST . "<br>"); 
 		echo "Student Query: " .  $sQuery . "<br>";
 		echo "Student id: " . $studentID . "<br>";
+		echo "Student name: " . $studentName . "<br>";
 		echo "Staff id: " . $staff . "<br>";
 	?>
 	<div class="container">
