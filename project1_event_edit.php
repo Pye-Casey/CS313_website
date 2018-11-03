@@ -13,6 +13,15 @@
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		// Get event info
+		$db = queryDB('SELECT * FROM behaviors.events WHERE id = ' . $_POST["id"]);
+		$bQuery = 'SELECT * FROM behaviors.events WHERE id = ' . $_POST["id"];
+		$row = $db->query($bQuery);
+		$behaviorResult = $row->fetchAll(PDO::FETCH_ASSOC);
+		$staff = $behaviorResult["staff_name"];
+		$location = $behaviorResult["location"];
+		$description = $behaviorResult["description"];
+		// Get student info
 		$sQuery = "SELECT * FROM behavior.students WHERE id='" . $_POST['id'] . "'" ;
 		//$db = queryDB('SELECT * FROM behaviors.events WHERE id = $_POST["id"]');
 		$statement = $db->query($sQuery);
@@ -63,15 +72,15 @@
 	</div>
 	<div class="form-group">
 		<label for="staff">Reffering Staff:</label>
-		<input type="text" class="form-control" id="staff">
+		<input type="text" class="form-control" id="staff" name="staff" value="<?= echo $staff; ?>">
 	</div>
 	<div class="form-group">
 		<label for="location">Location</label>
-		<input type="text" class="form-control" id="location">
+		<input type="text" class="form-control" id="location" name="location" value="<?= echo $location; ?>">
 	</div>
 	<div class="form-group">
 		<label for="description">Description:</label>
-		<textarea class="form-control" rows="5" id="description"></textarea>
+		<textarea class="form-control" rows="5" id="description" name="description" value="<?= echo $description; ?>"></textarea>
 	</div>
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary" >Save</button>
