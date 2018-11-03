@@ -13,7 +13,10 @@
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	<?php var_dump[$_POST]; ?>
+	<?php var_dump($_POST);
+		echo "Student ID: " . $_POST["studentID"] . "<br>";
+		echo "Description: " . $_POST["description"] . "<br>";
+	?>
 	<div class="container">
 	<form action="project1_student_edit_list.php" >
 	<h2>Event Status</h2>
@@ -32,11 +35,7 @@
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-		// clean up just in case
-			$fName =  htmlspecialchars($fName);
-			$lName =  htmlspecialchars($lName);
-			$grade =  htmlspecialchars($grade);
+	
 		// add to database
 		$query = "UPDATE behavior.events SET student_id=':student_id', staff_name=':staff', location=':location', description=':description'  WHERE id='" . $_POST["id"] . "'";
 		$stmt = $db->prepare($query);
