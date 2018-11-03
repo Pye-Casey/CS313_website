@@ -73,7 +73,7 @@
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
 	<?php
-		echo "Username: " . $username . ", password: " . $password . ", hash: " . $hash . "<br>;
+		echo "Username: " . $username . ", password: " . $password . ", hash: " . $hash . "<br>";
 	?>
 	<form action="project1_event_view.php" method="post">
 	<div class="container">
