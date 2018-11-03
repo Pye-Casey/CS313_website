@@ -1,7 +1,6 @@
 <?php
     require("logon.php");
-    checkLoginAndRedirect();
-    $loginFailed = ($_SESSION["login-fail"] == "true");
+    session_destroy();
 ?>
 
 <!DOCTYPE html>
