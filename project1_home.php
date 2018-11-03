@@ -38,14 +38,15 @@
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
 			$hash = $row["password"];
 			
-			if (strcmp($password, $hash) == 0) 
+			if (strcmp($password, $hash) !== 0) 
 			{
-				$_Session["username"] = $username;
-			} else {
-				/*session_destroy();
+				session_destroy();
 				header("HTTP/1.1 401 Unauthorized");
 				header("Location: project1_logon.php");
-				exit();*/
+				exit();
+			} else {
+				$_Session["username"] = $username;
+				
 			}
 		
 		
