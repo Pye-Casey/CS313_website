@@ -65,7 +65,7 @@
 
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	<?php var_dump($_POST . "<br>"); 
+	<?php 
 		echo "Student Query: " .  $sQuery . "<br>";
 		echo "Student id: " . $studentID . "<br>";
 		echo "Student name: " . $studentName . "<br>";
@@ -99,7 +99,7 @@
 	</div>
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary" >Save</button>
-		<button type="submit" class="btn btn-danger" >Delete Event</button>
+		<button type="submit" formaction="project1_event_deleted.php" class="btn btn-danger" >Delete Event</button>
 	</div>
 	
 	</form>
