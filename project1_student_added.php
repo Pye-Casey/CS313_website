@@ -36,7 +36,7 @@
 		// clean up just in case
 			$fName =  htmlspecialchars($_POST["fName"]);
 			$lName =  htmlspecialchars($_POST["lName"]);
-			$grade =  htmlspecialchars($_POST["grade"]);
+			$grade =  htmlspecialchars($_POST["gradeLevel"]);
 			
 			
 		// add to database
