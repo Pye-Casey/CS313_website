@@ -20,9 +20,8 @@
       </li>
 	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Student<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="project1_students_view.php">View Students</a></li>
+          <li><a href="project1_students_view.php">View/Edit Students</a></li>
 		  <li><a href="project1_student_add.php">Add Student</a></li>
-          <li><a href="project1_student_edit_list.php">Edit Student</a></li>
         </ul>
       </li>
 	  <li class=""><a href="project1_logout.php">Log Out</a></li>
