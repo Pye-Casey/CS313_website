@@ -22,7 +22,7 @@
 		$location = $behaviorResult["location"];
 		$description = $behaviorResult["description"];
 		// Get student info
-		/*$sQuery = "SELECT * FROM behavior.students WHERE id='" . $_POST['id'] . "'" ;
+		$sQuery = "SELECT * FROM behavior.students WHERE id='" . $_POST['id'] . "'" ;
 		//$db = queryDB('SELECT * FROM behaviors.events WHERE id = $_POST["id"]');
 		$statement = $db->query($sQuery);
 		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -30,7 +30,7 @@
 		//student info
 		$studentID = $results["id"];
 		$studentName =  $results["first_name"] . " " .  $results["last_name"];
-		*/
+		
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
         echo "Error!: $msg";
