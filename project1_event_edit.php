@@ -15,14 +15,14 @@
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		// Get event info
 		//$db = queryDB('SELECT * FROM behavior.events WHERE id = ' . $_POST["id"]);
-		$bQuery = 'SELECT * FROM behaviors.events WHERE id = ' . $_POST["id"];
+		$bQuery = 'SELECT * FROM behavior.events WHERE id = ' . $_POST["id"];
 		$row = $db->query($bQuery);
 		$behaviorResult = $row->fetchAll(PDO::FETCH_ASSOC);
 		$staff = $behaviorResult["staff_name"];
 		$location = $behaviorResult["location"];
 		$description = $behaviorResult["description"];
 		// Get student info
-		$sQuery = "SELECT * FROM behavior.students WHERE id='" . $_POST['id'] . "'" ;
+		/*$sQuery = "SELECT * FROM behavior.students WHERE id='" . $_POST['id'] . "'" ;
 		//$db = queryDB('SELECT * FROM behaviors.events WHERE id = $_POST["id"]');
 		$statement = $db->query($sQuery);
 		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -30,6 +30,7 @@
 		//student info
 		$studentID = $results["id"];
 		$studentName =  $results["first_name"] . " " .  $results["last_name"];
+		*/
         } catch (PDOException $ex) {
         $msg = $ex->getMessage();
         echo "Error!: $msg";
