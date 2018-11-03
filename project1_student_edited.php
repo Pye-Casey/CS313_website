@@ -31,7 +31,7 @@
 		$stmt = $db->prepare($query);
 		$stmt->bindValue(':fName', $_POST["fName"]);
 		$stmt->bindValue(':lName', $_POST["lName"]);
-		$stmt->bindValue(':grade', $_POST["grade"]);
+		$stmt->bindValue(':grade', $_POST["gradeLevel"]);
 		$stmt->execute(); 
 		echo "<p>This student has been edited.</p>";
 		
@@ -45,6 +45,7 @@
 	?>
 	
 	</div>
+	<br>
 	<button type="submit" formaction="project1_student_view.php" class="btn btn-success" >Back</button>
 	</form>
 	</div>
