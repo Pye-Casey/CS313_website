@@ -14,11 +14,11 @@
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$query = 'SELECT * FROM behavior.students WHERE id =' . $_POST["id"]; 
-		/*
+		$query = 'SELECT * FROM behavior.students WHERE id =' . $_POST["editID"]; 
+		
 		foreach ($db->query($query) as $row)
 		{
-			if ($row['id'] == $_POST['id']) {
+			if ($row['id'] == $_POST['editID']) {
 				$id = $row['id'];
 				$fName = $row['first_name'];
 				$lName = $row['last_name'];
@@ -26,7 +26,7 @@
 			}
 				
 		}
-		*/
+		
         } catch (PDOException $ex) {
 			$msg = $ex->getMessage();
 			echo "Error!: $msg";
