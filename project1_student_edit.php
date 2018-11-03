@@ -49,7 +49,9 @@
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	<?php var_dump($_POST); ?>
+	<?php var_dump($_POST); 
+		echo "ID: " . $_POST["id"] . " EditID: " . $_POST["editID"] . "<br>";
+	?>
 	<div class="container">
 	<form action="project1_student_edited.php" name="addStudentForm" method="post">
 	
