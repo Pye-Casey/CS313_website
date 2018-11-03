@@ -77,7 +77,7 @@
 	<h2>Edit Behavior Event</h2>
 	<div class="form-group">
 		<label for="studentName">First Name:</label>
-		<select class="form-control" id="studentName">
+		<select class="form-control" id="studentID" name="studentID">
 			<option value="<?= $studentID?>"><?= $studentName?></option>
 			<?php
 				foreach ($db->query("SELECT * FROM behavior.students") as $row):?>
