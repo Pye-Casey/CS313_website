@@ -40,7 +40,7 @@
 		$query = "UPDATE behavior.events SET student_id=:studentID, staff_name=:staff, location=':location', description=:description WHERE id=" . $_POST["id"] . "";
 		$stmt = $db->prepare($query);
 		$stmt->bindValue(':studentID', $_POST["studentID"]);
-		$stmt->bindValue(':staff_name', $_POST["staff"]);
+		$stmt->bindValue(':staff', $_POST["staff"]);
 		$stmt->bindValue(':location', $_POST["location"]);
 		$stmt->bindValue(':description', $_POST["location"]);
 		$stmt->execute(); 
