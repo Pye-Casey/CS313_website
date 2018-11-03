@@ -17,11 +17,17 @@
 		// Get event info
 		//$db = queryDB('SELECT * FROM behavior.events WHERE id = ' . $_POST["id"]);
 		$bQuery = 'SELECT * FROM behavior.events WHERE id = ' . $_POST["id"];
-		$row = $db->query($bQuery);
-		$behaviorResult = $row->fetchAll(PDO::FETCH_ASSOC);
-		$staff = $behaviorResult["staff_name"];
-		$location = $behaviorResult["location"];
-		$description = $behaviorResult["description"];
+		foreach ($db->query($bQuery) as $row)
+			{
+				if ($row['id'] == $_POST['id']) {
+					$id = $row['id'];
+					$staff = $behaviorResult["staff_name"];
+					$location = $behaviorResult["location"];
+					$description = $behaviorResult["description"];
+				}
+				
+			}
+		
 		// Get student info
 		$sQuery = "SELECT * FROM behavior.students WHERE id='" . $_POST['id'] . "'" ;
 		//$db = queryDB('SELECT * FROM behaviors.events WHERE id = $_POST["id"]');
