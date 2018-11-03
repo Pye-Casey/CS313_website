@@ -9,9 +9,9 @@
     
 	
 	if (!isset($username) || empty($username)) {
-            header("HTTP/1.1 401 Unauthorized");
+           /* header("HTTP/1.1 401 Unauthorized");
             header("Location: project1_logon.php");
-            exit();
+            exit(); */
         }
 	
 	
@@ -51,9 +51,9 @@
 		
     } catch (PDOException $ex) {
         $msg = $ex->getMessage();
-		header("HTTP/1.1 401 Unauthorized");
+		/*header("HTTP/1.1 401 Unauthorized");
             header("Location: project1_logon.php");
-            exit();
+            exit();*/
         echo "Error!: $msg";
         die();
     }
