@@ -1,3 +1,4 @@
+<?php var_dump[$_POST];?>
 <?php
 	try {
         $dbUrl = getenv('DATABASE_URL');
