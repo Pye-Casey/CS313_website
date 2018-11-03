@@ -1,3 +1,9 @@
+<?php
+    require("logon.php");
+    checkLoginAndRedirect();
+    $loginFailed = ($_SESSION["login-fail"] == "true");
+?>
+
 <!DOCTYPE html>
 <html>
     
@@ -31,7 +37,7 @@
 			<form id="Login" action="project1_home.php">
 
 				<div class="form-group">
-					<input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+					<input type="email" class="form-control" id="inputEmail" placeholder="Username">
 				</div>
 
 				<div class="form-group">
