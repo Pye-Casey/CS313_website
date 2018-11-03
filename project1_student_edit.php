@@ -1,4 +1,4 @@
-<?php var_dump[$_POST];?>
+
 <?php
 	try {
         $dbUrl = getenv('DATABASE_URL');
@@ -15,7 +15,7 @@
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$query = 'SELECT * FROM behavior.students WHERE id =' . $_POST["id"]; 
-		
+		/*
 		foreach ($db->query($query) as $row)
 		{
 			if ($row['id'] == $_POST['id']) {
@@ -26,7 +26,7 @@
 			}
 				
 		}
-		
+		*/
         } catch (PDOException $ex) {
 			$msg = $ex->getMessage();
 			echo "Error!: $msg";
@@ -49,6 +49,7 @@
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
+	<?php var_dump[$_POST];?>
 	<div class="container">
 	<form action="project1_student_edited.php" name="addStudentForm" method="post">
 	
