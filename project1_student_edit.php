@@ -49,9 +49,7 @@
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	<?php var_dump($_POST); 
-		echo "ID: " . $_POST["id"] . " EditID: " . $_POST["editID"] . "<br>";
-	?>
+	
 	<div class="container">
 	<form action="project1_student_edited.php" name="addStudentForm" method="post">
 	
@@ -68,6 +66,7 @@
 		<label for="grade">Grade Level:</label>
 		<input type="number" name="gradeLevel" min="0" step="1" class="form-control" id="grade" value="<?=$grade;?>">
 	</div>
+	<input type="text" name="id" hidden value="<?=$id;?>">
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary" >Save</button>
 		<button type="submit" class="btn btn-danger" formaction="project1_student_deleted.php" >Delete Student</button>
