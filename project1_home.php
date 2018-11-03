@@ -6,11 +6,9 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // check if valid
-    $validUsername = isPopulated($username);
-    $validPassword = isPopulated($password);
+    
 	
-	if (!isset($validUsername) || empty($validUsername)) {
+	if (!isset($username) || empty($username)) {
             header("HTTP/1.1 401 Unauthorized");
             header("Location: project1_logon.php");
             exit();
@@ -42,7 +40,7 @@
 			
 			if (strcmp($password, $hash) !== 0) 
 			{
-				$_Session["username"] = $validUsername;
+				$_Session["username"] = $username;
 			} else {
 				session_destroy();
 				header("HTTP/1.1 401 Unauthorized");
