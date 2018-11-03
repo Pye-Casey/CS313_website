@@ -13,6 +13,7 @@
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
+	<?php var_dump($_POST); ?>
 	<div class="container">
 	<form action="project1_student_add.php" >
 	<?php
@@ -36,7 +37,7 @@
 			$fName =  htmlspecialchars($_POST["fName"]);
 			$lName =  htmlspecialchars($_POST["lName"]);
 			$grade =  htmlspecialchars($_POST["grade"]);
-			$description =  htmlspecialchars($_POST["description"]);
+			
 			
 		// add to database
 		$query = "INSERT INTO behavior.students (first_name, last_name, grade_level) VALUES(:fName, :lName, :grade)";
@@ -50,26 +51,14 @@
 		echo "<h2><label name='info'>Student Added!</label></h2>";
 		} catch (PDOException $ex) {
 			$msg = $ex->getMessage();
+			echo $msg;
 			echo "<h2>Error: Student was not added. Please try again later.</h2>";
 			die();
 		}	
 	?>
 	
-	<h2><label name="info">Student Added!</label></h2>
-	<p>The following student has been added.</p>
-	<div class="form-group">
-		<label for="fName">First Name:</label>
-		<label type="text" class="" id="fName"></label>
-	</div>
-	<div class="form-group">
-		<label for="lName">Last Name:</label>
-		<label type="text" class="" id="lName"></label>
-	</div>
-	<div class="form-group">
-		<label for="grade">Grade Level:</label>
-		<label type="number" name="gradeLevel" id="grade"></label>
-	</div>
-	<button type="submit" formaction="project1_student_add.php" class="btn btn-success" >Back</button>
+	
+	<button type="submit" class="btn btn-success" >Back</button>
 	</form>
 	</div>
   </body>
