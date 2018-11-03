@@ -43,10 +43,10 @@
 		}
 
 	?>
-	
+	<button type="submit" formaction="project1_student_view.php" class="btn btn-success" >Back</button>
 	</div>
 	<br>
-	<button type="submit" formaction="project1_student_view.php" class="btn btn-success" >Back</button>
+	
 	</form>
 	</div>
   </body>
