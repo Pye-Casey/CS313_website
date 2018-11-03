@@ -15,7 +15,8 @@
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
 	<div class="container">
 	<form action="project1_student_edit_list.php" >
-	<h2><label name="info">Student Edit</label></h2>
+	<h2><label name="info">Student Deletion</label></h2>
+	
 	<?php
 	try {
         $dbUrl = getenv('DATABASE_URL');
@@ -31,38 +32,24 @@
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	
+
+		// clean up just in case
+			$fName =  htmlspecialchars($fName);
+			$lName =  htmlspecialchars($lName);
+			$grade =  htmlspecialchars($grade);
 		// add to database
-		$query = "UPDATE behavior.student SET first_name=:fName, last_name=:lName, grade_level=:grade WHERE id=" . $_POST["id"] . "";
-		$stmt = $db->prepare($query);
-		$stmt->bindValue(':fName', $_POST["fName"]);
-		$stmt->bindValue(':lName', $_POST["lName"]);
-		$stmt->bindValue(':grade', $_POST["grade"]);
-		$stmt->execute(); 
-		echo "<p>This student has been edited.</p>";
+		$query = "DELETE FROM behavior.students WHERE id='" . $_POST['id'] ."'";
+		$stmt = $db->query($query);
+		echo "<p>The student has been deleted.</p>";
 		
 		} catch (PDOException $ex) {
 			$msg = $ex->getMessage();
 			echo "Error!: $msg";
-			echo "<p>The student could not be edited. Please try again later.</p>";
+			echo "<p>The student could not be deleted. Please try again later.</p>";
 			die();
 		}
 
 	?>
-	
-	<p>The following student has been edited.</p>
-	<div class="form-group">
-		<label for="fName">First Name:</label>
-		<label type="text" class="" id="fName"></label>
-	</div>
-	<div class="form-group">
-		<label for="lName">Last Name:</label>
-		<label type="text" class="" id="lName"></label>
-	</div>
-	<div class="form-group">
-		<label for="grade">Grade Level:</label>
-		<label type="number" name="gradeLevel" id="grade"></label>
-	</div>
 	<button type="submit" formaction="project1_student_edit_list.php" class="btn btn-success" >Back</button>
 	</form>
 	</div>
