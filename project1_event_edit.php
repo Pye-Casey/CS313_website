@@ -65,12 +65,7 @@
 
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
-	<?php 
-		echo "Student Query: " .  $sQuery . "<br>";
-		echo "Student id: " . $studentID . "<br>";
-		echo "Student name: " . $studentName . "<br>";
-		echo "Staff id: " . $staff . "<br>";
-	?>
+	
 	<div class="container">
 	<form action="project1_event_edited.php" name="editEventForm" method="post">
 	
