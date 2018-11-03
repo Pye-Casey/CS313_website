@@ -92,6 +92,7 @@
 		<label for="description">Description:</label>
 		<textarea class="form-control" rows="5" id="description" name="description" value="<?= $description; ?>"><?= $description; ?></textarea>
 	</div>
+	<input type="text" hidden name="id" value="<?=$_POST['id'];?>">
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary" >Save</button>
 		<button type="submit" formaction="project1_event_deleted.php" class="btn btn-danger" >Delete Event</button>

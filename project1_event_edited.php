@@ -17,7 +17,46 @@
 	<div class="container">
 	<form action="project1_student_edit_list.php" >
 	<h2>Event Status</h2>
-	<p>The event has been edited.</p>
+	<?php
+	try {
+        $dbUrl = getenv('DATABASE_URL');
+                
+        $dbOpts = parse_url($dbUrl);
+                
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
+                
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+                
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		// clean up just in case
+			$fName =  htmlspecialchars($fName);
+			$lName =  htmlspecialchars($lName);
+			$grade =  htmlspecialchars($grade);
+		// add to database
+		$query = "UPDATE behavior.events SET student_id=':student_id', staff_name=':staff', location=':location', description=':description'  WHERE id='" . $_POST["id"] . "'";
+		$stmt = $db->prepare($query);
+		$stmt->bindValue(':student_id', $_POST["studentID"]);
+		$stmt->bindValue(':staff_name', $_POST["staff"]);
+		$stmt->bindValue(':location', $_POST["location"]);
+		$stmt->bindValue(':description', $_POST["location"]);
+		$stmt->execute(); 
+		echo "<p>The event has been edited.</p>";
+		
+		} catch (PDOException $ex) {
+			$msg = $ex->getMessage();
+			echo "Error!: $msg";
+			echo "<p>The event could not be edited. Please try again later.</p>";
+			die();
+		}
+
+	?>
+	
+	
 	
 	<button type="submit" formaction="project1_event_edit_list.php" class="btn btn-success" >Back</button>
 	</form>
