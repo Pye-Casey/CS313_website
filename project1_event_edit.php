@@ -78,7 +78,7 @@
 	<div class="form-group">
 		<label for="studentName">First Name:</label>
 		<select class="form-control" id="studentName">
-			<option></option>
+			<option value="<?= $studentID?>"><?= $studentName?></option>
 			<?php
 				foreach ($db->query("SELECT * FROM behavior.students") as $row):?>
 					<option value="<?= $row["id"];?>"><?= $row["first_name"] . " " . $row["last_name"];?></option>
