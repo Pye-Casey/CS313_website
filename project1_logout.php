@@ -19,6 +19,9 @@
 	<body >
 		<form action="project1_logon.php" >
 			<div class="container">
+			<?php
+				session_destroy();
+			?>
 			<h2>Logout Success</h2>
 			<p>You have been logged out.</p>
 			<button type="submit"  class="btn btn-success" >Logon</button>
