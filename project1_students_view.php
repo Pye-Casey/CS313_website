@@ -1,3 +1,6 @@
+<?php
+	require("project1_db.php");
+?>
 <!DOCTYPE html>
 <html>
   
@@ -27,21 +30,25 @@
 				<th>Firstname</th>
 				<th>Lastname</th>
 				<th>Grade</th>
-				<th># Events</th>
-				<th></th>
+				<th>View</th>
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr>
-				<td>John</td>
-				<td>Doe</td>
-				<td>6</td>
-				<td>5</td>
+			<?php
+				// Add rows
+				$db = queryDB('SELECT * FROM behavior.students');
+			?>
+				
+			<?php foreach ($db as $row):?>
+				<tr>
+				<td><?= $row['first_name'];?></td>
+				<td> <?= $row['last_name']);?></td>				
+				<td><?= $row['grade_level']);?></td>			
 				<td>
-					<button type="submit" class="btn btn-primary">View</button>
+					<button type='submit' value='<?php echo ($row["id"]);?>' name='id' class='btn btn-primary'>View</button>
 				</td>
-			  </tr>
-			  
+				</tr>
+			<?php endforeach;?>
 			</tbody>
 		  </table>
 		</div>

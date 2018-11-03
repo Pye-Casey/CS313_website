@@ -40,7 +40,6 @@
 			<?php
 				// Add rows
 				$db = queryDB('SELECT e.id, e.student_id, e.staff_name, e.location, e.description, e.time, s.first_name, s.last_name, s.grade_level FROM behavior.events AS e, behavior.students AS s WHERE e.student_id = s.id');
-				//$db = queryDB("SELECT * FROM behavior.events AS events, behavior.students AS students WHERE events.student_id = students.id");
 			?>
 				
 			<?php foreach ($db as $row):?>
