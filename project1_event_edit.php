@@ -72,15 +72,15 @@
 	</div>
 	<div class="form-group">
 		<label for="staff">Reffering Staff:</label>
-		<input type="text" class="form-control" id="staff" name="staff" value="<?= echo $staff; ?>">
+		<input type="text" class="form-control" id="staff" name="staff" value="<?= $staff; ?>">
 	</div>
 	<div class="form-group">
 		<label for="location">Location</label>
-		<input type="text" class="form-control" id="location" name="location" value="<?= echo $location; ?>">
+		<input type="text" class="form-control" id="location" name="location" value="<?= $location; ?>">
 	</div>
 	<div class="form-group">
 		<label for="description">Description:</label>
-		<textarea class="form-control" rows="5" id="description" name="description" value="<?= echo $description; ?>"></textarea>
+		<textarea class="form-control" rows="5" id="description" name="description" value="<?= $description; ?>"></textarea>
 	</div>
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary" >Save</button>
