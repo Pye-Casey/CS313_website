@@ -14,7 +14,7 @@
                 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		// Get event info
-		//$db = queryDB('SELECT * FROM behaviors.events WHERE id = ' . $_POST["id"]);
+		//$db = queryDB('SELECT * FROM behavior.events WHERE id = ' . $_POST["id"]);
 		$bQuery = 'SELECT * FROM behaviors.events WHERE id = ' . $_POST["id"];
 		$row = $db->query($bQuery);
 		$behaviorResult = $row->fetchAll(PDO::FETCH_ASSOC);
