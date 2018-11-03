@@ -33,7 +33,7 @@
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 		// add to database
-		$query = "UPDATE behavior.student SET first_name=:fName, last_name=:lName, grade_level=:grade WHERE id=" . $_POST["id"] . "";
+		$query = "UPDATE behavior.students SET first_name=:fName, last_name=:lName, grade_level=:grade WHERE id=" . $_POST["id"] . "";
 		$stmt = $db->prepare($query);
 		$stmt->bindValue(':fName', $_POST["fName"]);
 		$stmt->bindValue(':lName', $_POST["lName"]);
