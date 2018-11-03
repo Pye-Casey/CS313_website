@@ -42,10 +42,10 @@
 			{
 				$_Session["username"] = $username;
 			} else {
-				session_destroy();
+				/*session_destroy();
 				header("HTTP/1.1 401 Unauthorized");
 				header("Location: project1_logon.php");
-				exit();
+				exit();*/
 			}
 		
 		
@@ -69,12 +69,12 @@
 	
     <title>Behavior Tracker</title> 
   </head>
-  <script>
-	
-  </script>
   
   <body>
 	<?php include 'project_menu.php'; ?> <!	Add menu !>
+	<?php
+		echo "Username: " . $username . ", password: " . $password . ", hash: " . $hash . "<br>;
+	?>
 	<form action="project1_event_view.php" method="post">
 	<div class="container">
 		<h2>Student Behavior Tracker</h2>
