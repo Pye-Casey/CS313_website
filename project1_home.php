@@ -42,10 +42,10 @@
 			{
 				$_Session["username"] = $username;
 			} else {
-				session_destroy();
+				/*session_destroy();
 				header("HTTP/1.1 401 Unauthorized");
 				header("Location: project1_logon.php");
-				exit();
+				exit();*/
 			}
 		
 		
